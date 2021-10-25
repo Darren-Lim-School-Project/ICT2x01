@@ -1,0 +1,124 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 10 Sep 2020, 2:09:32 pm
+    Author     : jayst
+*/
+#aa {
+    text-decoration: underline;
+}
+.img-popup{
+    z-index: 1;
+    height: 320px;
+    bottom:  100px;
+    left: 100px;
+    padding: 10px;
+    background: grey;
+    position: absolute;
+    box-shadow: 0 0 15px #a9a9a9;
+}
+
+.img-popup img{
+    height: 100%;
+}
+
+figure {
+    display: inline-block;
+    text-align: center;
+}
+figcaption {
+    font-style: italic;
+    color: grey;
+}
+
+footer{
+    border-top: double;
+    text-align: center;
+    font-style: italic;
+    font-size: 14px;
+    padding: 20px 0;
+}
+#button{
+    position: absolute;
+    right: 0px;
+    margin-bottom: 150px;
+    
+}
+
+.closepop{
+    position: absolute;
+    top: 2px;
+    right: 2px;    
+    background-color: #FFF;
+    padding: 5px 2px 2px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    font-size: 22px;
+    line-height: 10px;
+    border-radius: 50%;
+}
+
+#logbtn
+{
+    background-color:  green;
+    border: 0px;
+    
+}
+#logbtn a{
+    color: white;
+}
+
+#signbtn
+{
+    background-color:  red;
+    border: 0px;
+    
+}
+#signbtn a{
+    color: white;
+}
+
+hr.style-six {
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+#seshname{
+    color: white;
+    
+}
+.material-icons md-light{
+    color: #ADD8E6;
+}
+
+/*#poo {
+    text-indent: 20px;
+}
+#chi {
+     text-indent: 100px;
+}
+#cc{
+    text-indent: 40px;
+}
+#tab{
+    text-indent: 100px;
+}
+nav{
+    padding-bottom: 500px;
+}
+#imgpet {
+    border-style: double;
+}
+#proccon
+{
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-top-color: gray;
+    padding-top: 23px;
+}
+*/
