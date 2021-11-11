@@ -1,0 +1,6 @@
+
+*.prefs
+*.xml
+.project
+.DS_Store
+.buildpath
