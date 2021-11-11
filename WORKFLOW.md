@@ -6,3 +6,4 @@
 6. Delete feature branch
 7. Only do bugfixes & documentation in rel branches
 8. Use Tags to demarcate rel versions in master branch"
+9. Almost the same as a rel branch but words off prev release version
