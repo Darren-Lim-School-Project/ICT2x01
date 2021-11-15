@@ -2,25 +2,11 @@
 <html lang="en">
 
 <head>
+<?php 
+include './common_resources/head.php';
+?>
 
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="">
-<meta name="author" content="">
-
-<title>IR-Acer - Blank</title>
-
-<!-- Custom fonts for this template-->
-<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet"
-	type="text/css">
-<link
-	href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-	rel="stylesheet">
-
-<!-- Custom styles for this template-->
-<link href="css/sb-admin-2.min.css" rel="stylesheet">
+<title>IR-Acer Challenges</title>
 
 </head>
 
@@ -30,8 +16,8 @@
 	<div id="wrapper">
 
 		<?php
-        include './common_resources/sidebar.php';
-        ?>
+include './common_resources/sidebar.php';
+?>
 
 		<!-- Content Wrapper -->
 		<div id="content-wrapper" class="d-flex flex-column">
@@ -44,6 +30,10 @@
                 ?>
 
 				<div class="container-fluid py-4">
+				
+				<!-- Page Heading -->
+                    <h1 class="h3 mb-4 text-gray-800">Challenges</h1>
+                    
 					<div class="row my-4">
 
 						<!-- Container for map design -->
@@ -98,8 +88,8 @@
 
 				<!-- Footer -->
 				<?php
-                include './common_resources/footer.php';
-                ?>
+    include './common_resources/footer.php';
+    ?>
 				<!-- End of Footer -->
 
 			</div>
@@ -112,29 +102,6 @@
 		<a class="scroll-to-top rounded" href="#page-top"> <i
 			class="fas fa-angle-up"></i>
 		</a>
-
-		<!-- Logout Modal-->
-		<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog"
-			aria-labelledby="exampleModalLabel" aria-hidden="true">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-						<button class="close" type="button" data-dismiss="modal"
-							aria-label="Close">
-							<span aria-hidden="true">×</span>
-						</button>
-					</div>
-					<div class="modal-body">Select "Logout" below if you are ready to
-						end your current session.</div>
-					<div class="modal-footer">
-						<button class="btn btn-secondary" type="button"
-							data-dismiss="modal">Cancel</button>
-						<a class="btn btn-primary" href="login.html">Logout</a>
-					</div>
-				</div>
-			</div>
-		</div>
 
 		<!-- Bootstrap core JavaScript-->
 		<script src="vendor/jquery/jquery.min.js"></script>
@@ -159,195 +126,193 @@
 		<script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
 		<script src="../assets/js/plugins/chartjs.min.js"></script>
 		<script>
-
-
-    // Move forward block return
-    Blockly.JavaScript['forward'] = function(block) {
-      var code = "moveForward()\n";
-      return code;
-    };
-
-    // turn left block return
-    Blockly.JavaScript['left'] = function(block) {
-      var code = "moveLeft()\n";
-      return code;
-    };
-
-    // turn right block return
-    Blockly.JavaScript['right'] = function(block) {
-      var code = "moveRight()\n";
-      return code;
-    };
-
-    var ctx = document.getElementById("chart-bars").getContext("2d");
-
-    new Chart(ctx, {
-      type: "bar",
-      data: {
-        labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-        datasets: [{
-          label: "Sales",
-          tension: 0.4,
-          borderWidth: 0,
-          borderRadius: 4,
-          borderSkipped: false,
-          backgroundColor: "#fff",
-          data: [450, 200, 100, 220, 500, 100, 400, 230, 500],
-          maxBarThickness: 6
-        }, ],
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-          legend: {
-            display: false,
-          }
-        },
-        interaction: {
-          intersect: false,
-          mode: 'index',
-        },
-        scales: {
-          y: {
-            grid: {
-              drawBorder: false,
-              display: false,
-              drawOnChartArea: false,
-              drawTicks: false,
-            },
-            ticks: {
-              suggestedMin: 0,
-              suggestedMax: 500,
-              beginAtZero: true,
-              padding: 15,
-              font: {
-                size: 14,
-                family: "Open Sans",
-                style: 'normal',
-                lineHeight: 2
+            // Move forward block return
+            Blockly.JavaScript['forward'] = function(block) {
+              var code = "moveForward()\n";
+              return code;
+            };
+        
+            // turn left block return
+            Blockly.JavaScript['left'] = function(block) {
+              var code = "moveLeft()\n";
+              return code;
+            };
+        
+            // turn right block return
+            Blockly.JavaScript['right'] = function(block) {
+              var code = "moveRight()\n";
+              return code;
+            };
+        
+            var ctx = document.getElementById("chart-bars").getContext("2d");
+        
+            new Chart(ctx, {
+              type: "bar",
+              data: {
+                labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                datasets: [{
+                  label: "Sales",
+                  tension: 0.4,
+                  borderWidth: 0,
+                  borderRadius: 4,
+                  borderSkipped: false,
+                  backgroundColor: "#fff",
+                  data: [450, 200, 100, 220, 500, 100, 400, 230, 500],
+                  maxBarThickness: 6
+                }, ],
               },
-              color: "#fff"
-            },
-          },
-          x: {
-            grid: {
-              drawBorder: false,
-              display: false,
-              drawOnChartArea: false,
-              drawTicks: false
-            },
-            ticks: {
-              display: false
-            },
-          },
-        },
-      },
-    });
-
-
-    var ctx2 = document.getElementById("chart-line").getContext("2d");
-
-    var gradientStroke1 = ctx2.createLinearGradient(0, 230, 0, 50);
-
-    gradientStroke1.addColorStop(1, 'rgba(203,12,159,0.2)');
-    gradientStroke1.addColorStop(0.2, 'rgba(72,72,176,0.0)');
-    gradientStroke1.addColorStop(0, 'rgba(203,12,159,0)'); //purple colors
-
-    var gradientStroke2 = ctx2.createLinearGradient(0, 230, 0, 50);
-
-    gradientStroke2.addColorStop(1, 'rgba(20,23,39,0.2)');
-    gradientStroke2.addColorStop(0.2, 'rgba(72,72,176,0.0)');
-    gradientStroke2.addColorStop(0, 'rgba(20,23,39,0)'); //purple colors
-
-    new Chart(ctx2, {
-      type: "line",
-      data: {
-        labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-        datasets: [{
-            label: "Mobile apps",
-            tension: 0.4,
-            borderWidth: 0,
-            pointRadius: 0,
-            borderColor: "#cb0c9f",
-            borderWidth: 3,
-            backgroundColor: gradientStroke1,
-            fill: true,
-            data: [50, 40, 300, 220, 500, 250, 400, 230, 500],
-            maxBarThickness: 6
-
-          },
-          {
-            label: "Websites",
-            tension: 0.4,
-            borderWidth: 0,
-            pointRadius: 0,
-            borderColor: "#3A416F",
-            borderWidth: 3,
-            backgroundColor: gradientStroke2,
-            fill: true,
-            data: [30, 90, 40, 140, 290, 290, 340, 230, 400],
-            maxBarThickness: 6
-          },
-        ],
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-          legend: {
-            display: false,
-          }
-        },
-        interaction: {
-          intersect: false,
-          mode: 'index',
-        },
-        scales: {
-          y: {
-            grid: {
-              drawBorder: false,
-              display: true,
-              drawOnChartArea: true,
-              drawTicks: false,
-              borderDash: [5, 5]
-            },
-            ticks: {
-              display: true,
-              padding: 10,
-              color: '#b2b9bf',
-              font: {
-                size: 11,
-                family: "Open Sans",
-                style: 'normal',
-                lineHeight: 2
+              options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                  legend: {
+                    display: false,
+                  }
+                },
+                interaction: {
+                  intersect: false,
+                  mode: 'index',
+                },
+                scales: {
+                  y: {
+                    grid: {
+                      drawBorder: false,
+                      display: false,
+                      drawOnChartArea: false,
+                      drawTicks: false,
+                    },
+                    ticks: {
+                      suggestedMin: 0,
+                      suggestedMax: 500,
+                      beginAtZero: true,
+                      padding: 15,
+                      font: {
+                        size: 14,
+                        family: "Open Sans",
+                        style: 'normal',
+                        lineHeight: 2
+                      },
+                      color: "#fff"
+                    },
+                  },
+                  x: {
+                    grid: {
+                      drawBorder: false,
+                      display: false,
+                      drawOnChartArea: false,
+                      drawTicks: false
+                    },
+                    ticks: {
+                      display: false
+                    },
+                  },
+                },
               },
-            }
-          },
-          x: {
-            grid: {
-              drawBorder: false,
-              display: false,
-              drawOnChartArea: false,
-              drawTicks: false,
-              borderDash: [5, 5]
-            },
-            ticks: {
-              display: true,
-              color: '#b2b9bf',
-              padding: 20,
-              font: {
-                size: 11,
-                family: "Open Sans",
-                style: 'normal',
-                lineHeight: 2
+            });
+        
+        
+            var ctx2 = document.getElementById("chart-line").getContext("2d");
+        
+            var gradientStroke1 = ctx2.createLinearGradient(0, 230, 0, 50);
+        
+            gradientStroke1.addColorStop(1, 'rgba(203,12,159,0.2)');
+            gradientStroke1.addColorStop(0.2, 'rgba(72,72,176,0.0)');
+            gradientStroke1.addColorStop(0, 'rgba(203,12,159,0)'); //purple colors
+        
+            var gradientStroke2 = ctx2.createLinearGradient(0, 230, 0, 50);
+        
+            gradientStroke2.addColorStop(1, 'rgba(20,23,39,0.2)');
+            gradientStroke2.addColorStop(0.2, 'rgba(72,72,176,0.0)');
+            gradientStroke2.addColorStop(0, 'rgba(20,23,39,0)'); //purple colors
+        
+            new Chart(ctx2, {
+              type: "line",
+              data: {
+                labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                datasets: [{
+                    label: "Mobile apps",
+                    tension: 0.4,
+                    borderWidth: 0,
+                    pointRadius: 0,
+                    borderColor: "#cb0c9f",
+                    borderWidth: 3,
+                    backgroundColor: gradientStroke1,
+                    fill: true,
+                    data: [50, 40, 300, 220, 500, 250, 400, 230, 500],
+                    maxBarThickness: 6
+        
+                  },
+                  {
+                    label: "Websites",
+                    tension: 0.4,
+                    borderWidth: 0,
+                    pointRadius: 0,
+                    borderColor: "#3A416F",
+                    borderWidth: 3,
+                    backgroundColor: gradientStroke2,
+                    fill: true,
+                    data: [30, 90, 40, 140, 290, 290, 340, 230, 400],
+                    maxBarThickness: 6
+                  },
+                ],
               },
-            }
-          },
-        },
-      },
-    });
-  </script>
+              options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                  legend: {
+                    display: false,
+                  }
+                },
+                interaction: {
+                  intersect: false,
+                  mode: 'index',
+                },
+                scales: {
+                  y: {
+                    grid: {
+                      drawBorder: false,
+                      display: true,
+                      drawOnChartArea: true,
+                      drawTicks: false,
+                      borderDash: [5, 5]
+                    },
+                    ticks: {
+                      display: true,
+                      padding: 10,
+                      color: '#b2b9bf',
+                      font: {
+                        size: 11,
+                        family: "Open Sans",
+                        style: 'normal',
+                        lineHeight: 2
+                      },
+                    }
+                  },
+                  x: {
+                    grid: {
+                      drawBorder: false,
+                      display: false,
+                      drawOnChartArea: false,
+                      drawTicks: false,
+                      borderDash: [5, 5]
+                    },
+                    ticks: {
+                      display: true,
+                      color: '#b2b9bf',
+                      padding: 20,
+                      font: {
+                        size: 11,
+                        family: "Open Sans",
+                        style: 'normal',
+                        lineHeight: 2
+                      },
+                    }
+                  },
+                },
+              },
+            });
+		</script>
 		<script>
     var win = navigator.platform.indexOf('Win') > -1;
     if (win && document.querySelector('#sidenav-scrollbar')) {
