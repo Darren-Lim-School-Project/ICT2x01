@@ -21,7 +21,11 @@ function showCode() {
 
 Blockly.Blocks['forward'] = {
   init: function() {
-    this.appendValueInput("VALUE").setCheck("String").appendField("Move Forward");
+    this.appendValueInput("VALUE").setCheck("String").appendField(new Blockly.FieldImage(
+        "./assets/img/movement_forward.png",
+        50,
+        50,
+        "*"));
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(255);
@@ -32,7 +36,11 @@ Blockly.Blocks['forward'] = {
 
 Blockly.Blocks['left'] = {
   init: function() {
-    this.appendValueInput("VALUE").setCheck("String").appendField("Turn Left");
+    this.appendValueInput("VALUE").setCheck("String").appendField(new Blockly.FieldImage(
+        "./assets/img/movement_turnleft.png",
+        50,
+        50,
+        "*"));
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(255);
@@ -43,7 +51,11 @@ Blockly.Blocks['left'] = {
 
 Blockly.Blocks['right'] = {
   init: function() {
-    this.appendValueInput("VALUE").setCheck("String").appendField("Turn Right");
+    this.appendValueInput("VALUE").setCheck("String").appendField(new Blockly.FieldImage(
+        "./assets/img/movement_turnright.png",
+        50,
+        50,
+        "*"));
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(255);
