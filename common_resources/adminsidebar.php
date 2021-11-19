@@ -10,7 +10,7 @@
 		<div class="sidebar-brand-icon rotate-n-15">
 			<i class="fas fa-laugh-wink"></i>
 		</div>
-		<div class="sidebar-brand-text mx-3">IR-Acer User Panel</div>
+		<div class="sidebar-brand-text mx-3">IR-Acer Admin Panel</div>
 	</a>
 
 	<!-- Divider -->
@@ -24,15 +24,16 @@
 	<hr class="sidebar-divider">
 
 	<!-- Heading -->
-	<div class="sidebar-heading">User Menu</div>
+	<div class="sidebar-heading">Admin Menu</div>
 
 	<!-- Nav Item - Pages Collapse Menu -->
-        <li class="nav-item"><a class="nav-link collapsed" href="../../challenges.php"> <span>Play Game</span>
+         <li class="nav-item"><a class="nav-link collapsed" href="admindashboard.php"> <span>Admin Dashboard</span>
 	</a>
-        <li class="nav-item"><a class="nav-link collapsed" href="tutorial.php"> <span>Tutorial</span>
+        <li class="nav-item"><a class="nav-link collapsed" href="viewcarlist.php"> <span>View Car List</span>
 	</a>
-        <li class="nav-item"><a class="nav-link collapsed" href="leaderboard.php"> <span>Leaderboard</span>
+        <li class="nav-item"><a class="nav-link collapsed" href="forgot-password.html"> <span>Change Password</span>
 	</a>
+       
 <!--                
 	<li class="nav-item"><a class="nav-link collapsed" href="#"
 		data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
@@ -89,8 +90,8 @@
 	<li class="nav-item"><a class="nav-link" href="tables.php"> <i
 			class="fas fa-fw fa-table"></i> <span>Tables</span></a></li>-->
                         
-<!--	 Divider 
-	<hr class="sidebar-divider d-none d-md-block">-->
+<!--	 Divider -->
+	<hr class="sidebar-divider d-none d-md-block">
 
 	<!-- Sidebar Toggler (Sidebar) -->
 	<div class="text-center d-none d-md-inline">
