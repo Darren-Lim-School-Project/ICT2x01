@@ -7,7 +7,7 @@
 include './common_resources/head.php';
 ?>
 
-<title>IR-Acer - Tutorial</title>
+<title>IR-Acer - Leaderboard</title>
 
 <!-- Custom fonts for this template-->
 <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet"
@@ -46,7 +46,7 @@ include './common_resources/sidebar.php';
 				<div class="container-fluid">
 
 					<!-- Page Heading -->
-					<h1 class="h3 mb-4 text-gray-800">Tutorial</h1>
+					<h1 class="h3 mb-4 text-gray-800">Cleanslate</h1>
 
 				</div>
 				<!-- /.container-fluid -->
