@@ -1,5 +1,7 @@
 <?php
 require_once 'conn.php';
+include 'sessionManager.php';
+
 
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -11,7 +13,8 @@ require_once 'conn.php';
     $count = $row['count'];
 
     if ($count > 0) {
-        echo "<div class='alert alert-success'>Login successful</div>";
+        $_SESSION['role'] = "Admin";
+        header("Location: index.php");
     } else {
         echo "<div class='alert alert-danger'>Invalid username or password</div>";
     }

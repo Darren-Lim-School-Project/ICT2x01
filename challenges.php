@@ -1,3 +1,6 @@
+<?php
+include 'sessionManager.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,10 +28,12 @@ include './common_resources/sidebar.php';
 			<!-- Main Content -->
 			<div id="content">
 
+                <!-- navbar -->
                 <?php
                 include './common_resources/nav.php';
                 ?>
-
+                <!-- End of navbar -->
+                
 				<div class="container-fluid py-4">
 				
 				<!-- Page Heading -->
