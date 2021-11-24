@@ -28,19 +28,29 @@
 
 	<!-- Nav Item - Pages Collapse Menu -->
 
-        <li class="nav-item"><a class="nav-link collapsed" href="challenges.php"> <span> <i class="fas fa-fw fa-play"></i> Play Game</span>
+	<li class="nav-item"><a class="nav-link collapsed"
+		href="playgame.php"> <span> <i class="fas fa-fw fa-play"></i> Play
+				Game
+		</span>
 	</a>
-        <li class="nav-item"><a class="nav-link collapsed" href="tutorial.php"> <span> <i class="fas fa-fw fa-question-circle"></i> Tutorial</span>
+	
+	<li class="nav-item"><a class="nav-link collapsed" href="tutorial.php">
+			<span> <i class="fas fa-fw fa-question-circle"></i> Tutorial
+		</span>
 	</a>
-        <li class="nav-item"><a class="nav-link collapsed" href="leaderboard.php"> <span> <i class="fas fa-fw fa-users"></i> Leaderboard</span>
+	
+	<li class="nav-item"><a class="nav-link collapsed"
+		href="leaderboard.php"> <span> <i class="fas fa-fw fa-users"></i>
+				Leaderboard
+		</span>
 	</a>
-        <li class="nav-item">
-		</li>
+	
+	<li class="nav-item"></li>
 
-<!--	 Divider 
+	<!--	 Divider 
 	<hr class="sidebar-divider">-->
 
-	
+
 
 	<!-- Divider -->
 	<hr class="sidebar-divider d-none d-md-block">
