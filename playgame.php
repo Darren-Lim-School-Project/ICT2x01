@@ -7,7 +7,7 @@
 include './common_resources/head.php';
 ?>
 
-<title>IR-Acer - Leaderboard</title>
+<title>IR-Acer - Play Game</title>
 
 <!-- Custom fonts for this template-->
 <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet"
@@ -36,7 +36,7 @@ include './common_resources/sidebar.php';
 			<!-- Main Content -->
 			<div id="content">
 
-                <!-- navbar -->
+				<!-- navbar -->
                 <?php
                 include './common_resources/nav.php';
                 ?>
@@ -47,6 +47,25 @@ include './common_resources/sidebar.php';
 
 					<!-- Page Heading -->
 					<h1 class="h3 mb-4 text-gray-800">Play Game!</h1>
+
+					<!-- Basic Card Example -->
+					<div class="card shadow mb-4">
+						<div class="card-header py-3">
+							<h6 class="m-0 font-weight-bold text-primary">Select your
+								Difficulty!</h6>
+						</div>
+						<div class="card-body">
+
+							<a href="#" class="btn btn-success btn-icon-split"> <span
+								class="text">Easy</span>
+							</a> <a href="#" class="btn btn-primary btn-icon-split"> <span
+								class="text">Medium</span>
+							</a> <a href="#" class="btn btn-danger btn-icon-split"> <span
+								class="text">Hard</span>
+							</a>
+
+						</div>
+					</div>
 
 				</div>
 				<!-- /.container-fluid -->
