@@ -1,8 +1,30 @@
+<?php
+$difficulty = $_GET['difficulty'];
+
+// Here by default (won't ever be 'hit' cos if not one of the 3, will redirect)
+$dir_path = 'assets/img/challenges/easy/';
+
+if ($difficulty == 'easy') {
+    $dir_path = 'assets/img/challenges/easy';
+} elseif ($difficulty == 'medium') {
+    $dir_path = 'assets/img/challenges/medium';
+} elseif ($difficulty == 'hard') {
+    $dir_path = 'assets/img/challenges/hard';
+} else {
+    header("Location: playgame.php");
+    exit();
+}
+
+// echo $dir_path;
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-<?php 
+
+<?php
 include './common_resources/head.php';
 ?>
 
@@ -25,17 +47,17 @@ include './common_resources/sidebar.php';
 			<!-- Main Content -->
 			<div id="content">
 
-                <!-- navbar -->
+				<!-- navbar -->
                 <?php
                 include './common_resources/nav.php';
                 ?>
                 <!-- End of navbar -->
-                
+
 				<div class="container-fluid py-4">
-				
-				<!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">Challenges</h1>
-                    
+
+					<!-- Page Heading -->
+					<h1 class="h3 mb-4 text-gray-800">Challenges</h1>
+
 					<div class="row my-4">
 
 						<!-- Container for map design -->
@@ -49,13 +71,16 @@ include './common_resources/sidebar.php';
 									</div>
 								</div>
 								<div class="card-body px-0 pb-2 text-center">
-									<img src="../assets/img/ChallengeDesign.png"
-										alt="Challenge Map" class="img-fluid border-radius-lg">
+								
+								<?php getRandomImage($dir_path); ?>
+<!-- 									<img src="../assets/img/ChallengeDesign.png" -->
+									<!-- 										alt="Challenge Map" class="img-fluid border-radius-lg"> -->
+
 								</div>
 							</div>
 						</div>
 
-						<div class="col-lg-6">
+						<div class="col-lg-8">
 							<div class="card h-100">
 								<div class="card-header pb-0">
 									<h6>Commands</h6>
@@ -328,6 +353,30 @@ include './common_resources/sidebar.php';
 		<script async defer src="https://buttons.github.io/buttons.js"></script>
 		<!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
 		<script src="../assets/js/soft-ui-dashboard.min.js?v=1.0.3"></script>
+
+<?php
+function getRandomImage($dir_path = NULL){
+    
+//     echo "param => " . $dir_path;
+    if(!empty($dir_path)){
+        $files = scandir($dir_path);
+        $count = count($files);
+        if($count > 2){
+            $index = rand(2, ($count-1));
+            $filename = $files[$index];
+            if (strpos($filename, 'jpeg') !== false) {
+                echo '<img src="'.$dir_path."/".$filename.'" alt="'.$filename.'" class="img-fluid border-radius-lg">';
+            } else {
+                getRandomImage($dir_path);
+            }
+        } else {
+            return "The directory is empty!";
+        }
+    } else {
+        return "Please enter valid path to image directory!";
+    }
+}
+?>
 
 </body>
 

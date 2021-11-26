@@ -56,11 +56,11 @@ include './common_resources/sidebar.php';
 						</div>
 						<div class="card-body">
 
-							<a href="#" class="btn btn-success btn-icon-split"> <span
+							<a href="./challenges.php?difficulty=easy" class="btn btn-success btn-icon-split"> <span
 								class="text">Easy</span>
-							</a> <a href="#" class="btn btn-primary btn-icon-split"> <span
+							</a> <a href="./challenges.php?difficulty=medium" class="btn btn-primary btn-icon-split"> <span
 								class="text">Medium</span>
-							</a> <a href="#" class="btn btn-danger btn-icon-split"> <span
+							</a> <a href="./challenges.php?difficulty=hard" class="btn btn-danger btn-icon-split"> <span
 								class="text">Hard</span>
 							</a>
 
