@@ -8,6 +8,16 @@ include 'sessionManager.php';
 
 <?php 
 include './common_resources/head.php';
+include 'dashboard_entity.php';
+$dashboard_entity = new dashboard_entity();
+
+if(!empty($_GET["carwifi"])){
+    $dashboard_entity->setIsConnected($_GET["carwifi"]);
+}
+
+if(!empty($_GET["carspeed"])){
+    $dashboard_entity->setSpeed($_GET["carspeed"]);
+}
 ?>
 
     <title>IR-Acer - Dashboard</title>
@@ -64,8 +74,9 @@ include './common_resources/sidebar.php';
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                Default Speed</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">200 MPH</div>
+                                                Speed</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $dashboard_entity->getSpeed();?> MPH</div>
+
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-tachometer-alt fa-2x text-gray-300"></i>
@@ -101,7 +112,7 @@ include './common_resources/sidebar.php';
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
                                                 WIFI (ESP8266)</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">Connected</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php if ($dashboard_entity->getIsConnected() == False) {echo 'Not Connected!';} else {echo 'Connected!';};?></div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-wifi fa-2x text-gray-300"></i>
