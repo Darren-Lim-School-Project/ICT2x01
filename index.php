@@ -1,3 +1,6 @@
+<?php
+include 'sessionManager.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -485,7 +488,6 @@ include './common_resources/sidebar.php';
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
-
     <!-- Logout Modal-->
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
