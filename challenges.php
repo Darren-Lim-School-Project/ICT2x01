@@ -25,7 +25,7 @@ if ($difficulty == 'easy') {
 <head>
 
 <?php
-include './common_resources/head.php';
+include 'includes/head.php';
 ?>
 
 <title>IR-Acer Challenges</title>
@@ -38,7 +38,7 @@ include './common_resources/head.php';
 	<div id="wrapper">
 
 		<?php
-include './common_resources/sidebar.php';
+include 'includes/sidebar.php';
 ?>
 
 		<!-- Content Wrapper -->
@@ -49,7 +49,7 @@ include './common_resources/sidebar.php';
 
 				<!-- navbar -->
                 <?php
-                include './common_resources/nav.php';
+                include 'includes/nav.php';
                 ?>
                 <!-- End of navbar -->
 
@@ -72,9 +72,15 @@ include './common_resources/sidebar.php';
 								</div>
 								<div class="card-body px-0 pb-2 text-center">
 								
-								<?php getRandomImage($dir_path); ?>
-<!-- 									<img src="../assets/img/ChallengeDesign.png" -->
-									<!-- 										alt="Challenge Map" class="img-fluid border-radius-lg"> -->
+								<div class="challenge_container">
+								
+								
+									<?php getRandomImage($dir_path); ?>
+								<!--  <img id="carfront" style="display: none;" src='../assets/img/car_images/car_challenge.png'></img> -->
+										<img " class="img-fluid border-radius-lg car_location" src='../assets/img/car_images/car_challenge.png'></img>
+										<!-- 									<img src="../assets/img/ChallengeDesign.png" -->
+										<!-- 										alt="Challenge Map" class="img-fluid border-radius-lg"> -->
+								</div>
 
 								</div>
 							</div>
@@ -89,7 +95,7 @@ include './common_resources/sidebar.php';
 									<div id="blocklyDiv" style="height: 480px; width: 690px;"></div>
 									<xml id="toolbox-categories" style="display: none"> <!-- Control Category -->
 									<category name="Movement" categorystyle="list_category"> <block
-										type="forward"></block> <block type="left"></block> <block
+										type="up"></block> <block type="down"></block> <block type="left"></block> <block
 										type="right"></block> </block> </category> <!-- Loop Category -->
 									<category name="Loops" categorystyle="loop_category"> <block
 										type="controls_repeat_ext"> <value name="TIMES"> <shadow
@@ -115,7 +121,7 @@ include './common_resources/sidebar.php';
 
 				<!-- Footer -->
 				<?php
-    include './common_resources/footer.php';
+    include 'includes/footer.php';
     ?>
 				<!-- End of Footer -->
 
@@ -130,16 +136,6 @@ include './common_resources/sidebar.php';
 			class="fas fa-angle-up"></i>
 		</a>
 
-		<!-- Bootstrap core JavaScript-->
-		<script src="vendor/jquery/jquery.min.js"></script>
-		<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-		<!-- Core plugin JavaScript-->
-		<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-		<!-- Custom scripts for all pages-->
-		<script src="js/sb-admin-2.min.js"></script>
-
 		<!-- Blockly javascript -->
 		<script src="https://unpkg.com/blockly/blockly.min.js"></script>
 		<!-- <script src="https://unpkg.com/@blockly/dev-tools@2.0.0/dist/index.js"></script> -->
@@ -147,48 +143,53 @@ include './common_resources/sidebar.php';
 		<script src="../assets/js/blockly/javascript_compressed.js"></script>
 		<!-- End of Blockly javascript -->
 
-		<script src="../assets/js/core/popper.min.js"></script>
-		<script src="../assets/js/core/bootstrap.min.js"></script>
-		<script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
-		<script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
-		<script src="../assets/js/plugins/chartjs.min.js"></script>
-<!-- 	This script will get the generated code after using blockly	 -->
+		<!-- 	This script will get the generated code after using blockly	 -->
 		<script>
-            // Move forward block return
-            Blockly.JavaScript['forward'] = function(block) {
+            // Move up block return
+            Blockly.JavaScript['up'] = function(block) {
               var code = "moveForward()\n";
+              return code;
+            };
+            
+             // Move down block return
+            Blockly.JavaScript['down'] = function(block) {
+              var code = "moveDown()\n";
               return code;
             };
         
             // turn left block return
             Blockly.JavaScript['left'] = function(block) {
-              var code = "turnLeft()\n";
+              var code = "moveLeft()\n";
               return code;
             };
         
             // turn right block return
             Blockly.JavaScript['right'] = function(block) {
-              var code = "turnRight()\n";
+              var code = "moveRight()\n";
               return code;
             };
 		</script>
-		<!-- Github buttons -->
-		<script async defer src="https://buttons.github.io/buttons.js"></script>
-		<!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
-		<script src="../assets/js/soft-ui-dashboard.min.js?v=1.0.3"></script>
+
+		<!-- 		This script will overlay a car on the challenge image for movement -->
+		<script>
+			
+			
+		</script>
 
 <?php
-function getRandomImage($dir_path = NULL){
-    
-//     echo "param => " . $dir_path;
-    if(!empty($dir_path)){
+
+function getRandomImage($dir_path = NULL)
+{
+
+    // echo "param => " . $dir_path;
+    if (! empty($dir_path)) {
         $files = scandir($dir_path);
         $count = count($files);
-        if($count > 2){
-            $index = rand(2, ($count-1));
+        if ($count > 2) {
+            $index = rand(2, ($count - 1));
             $filename = $files[$index];
             if (strpos($filename, 'jpeg') !== false) {
-                echo '<img src="'.$dir_path."/".$filename.'" alt="'.$filename.'" class="img-fluid border-radius-lg" id="challenge_image">';
+                echo '<img src="' . $dir_path . "/" . $filename . '" alt="' . $filename . '" class="img-fluid border-radius-lg challenge_image">';
             } else {
                 getRandomImage($dir_path);
             }
@@ -200,6 +201,8 @@ function getRandomImage($dir_path = NULL){
     }
 }
 ?>
+
+
 
 </body>
 

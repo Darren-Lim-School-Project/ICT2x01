@@ -4,7 +4,7 @@
 <head>
 
 <?php
-include './common_resources/head.php';
+include 'includes/head.php';
 ?>
 
 <title>IR-Acer - Leaderboard</title>
@@ -27,7 +27,7 @@ include './common_resources/head.php';
 	<div id="wrapper">
 
 <?php
-include './common_resources/sidebar.php';
+include 'includes/sidebar.php';
 ?>
 
         <!-- Content Wrapper -->
@@ -38,7 +38,7 @@ include './common_resources/sidebar.php';
 
                 <!-- navbar -->
                 <?php
-                include './common_resources/nav.php';
+                include 'includes/nav.php';
                 ?>
                 <!-- End of navbar -->
 
@@ -550,7 +550,7 @@ include './common_resources/sidebar.php';
 
 			<!-- Footer -->
 <?php
-include './common_resources/footer.php';
+include 'includes/footer.php';
 ?>
 			<!-- End of Footer -->
 

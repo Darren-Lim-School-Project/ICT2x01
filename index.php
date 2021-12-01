@@ -4,7 +4,7 @@
 <head>
 
 <?php 
-include './common_resources/head.php';
+include 'includes/head.php';
 ?>
 
     <title>IR-Acer - Dashboard</title>
@@ -16,7 +16,7 @@ include './common_resources/head.php';
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+<!--     <link href="../css/sb-admin-2.min.css" rel="stylesheet"> -->
 
 </head>
 
@@ -26,7 +26,7 @@ include './common_resources/head.php';
     <div id="wrapper">
 
        		<?php
-include './common_resources/sidebar.php';
+include 'includes/sidebar.php';
 ?>
 
         <!-- Content Wrapper -->
@@ -37,7 +37,7 @@ include './common_resources/sidebar.php';
 
                 <!-- Topbar -->
                 <?php
-                include './common_resources/nav.php';
+                include 'includes/nav.php';
                 ?>
                 <!-- End of Topbar -->
 
@@ -377,7 +377,7 @@ include './common_resources/sidebar.php';
 
 				<!-- Footer -->
 				<?php
-    include './common_resources/footer.php';
+    include 'includes/footer.php';
     ?>
     <!-- End of Footer -->
 
