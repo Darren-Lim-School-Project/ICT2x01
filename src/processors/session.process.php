@@ -6,6 +6,6 @@ $inactive = 900;
 if(isset($_SESSION['timeout']) ) {
     $session_life = time() - $_SESSION['timeout'];
     if($session_life > $inactive)
-    { session_destroy(); header("Location: ../controller/logoutController.php"); }
+    { session_destroy(); header("Location: logout.process"); }
 }
 $_SESSION['timeout'] = time();
