@@ -1,25 +1,55 @@
 <?php
 
-namespace Controller;
+require_once "../mvc/model/loginClass.php";
 
-require '../../../vendor/autoload.php';
-session_start();
+class loginController extends loginClass {
+    private $username;
+    private $password;
 
-    if (isset($_POST["submit"])) {
-        $username = $_POST["username"];
-        $password = $_POST["password"];
+    public function __construct($username, $password)
+    {
+        $this->username = $username;
+        $this->password = $password;
 
-        $login = new \Model\loginModel();
-        $status = $login->loginUser($username, $password);
-
-        if ($status > 0) {
+    }
+    public function loginUser(){
+        if($this->isEmptyInput() == true){
+            //echo "Empty Input!";
+            header("location: ../index.php?error=emptyinput");
+            exit();
+        }
+        $getUserRes = $this->getUser($this->username, $this->password);
+        if($getUserRes == true){
+            session_start();
             $_SESSION['role'] = "Admin";
-            header("Location: ../view/index.php");
-        } else {
-            echo "Incorrect login credential";
+            $_SESSION['username'] = "admin";
+            return true;
+        }
+        return false;
+
+    }
+
+    public function checkUser(){
+
+        if($this->isEmptyInput() == true){
+            //echo "Empty Input!";
+            header("location: ../index.php?error=emptyinput");
+            exit();
+        }
+        return $this->getUser($this->username, $this->password);
+    }
+
+    private function isEmptyInput(): bool
+    {
+        $result =false;
+
+        if(empty($this->username) || empty($this->password)){
+            $results = true;
+            return $result;
+        }
+        else{
+            return false;
         }
 
-    } else {
-        echo "Error";
     }
-?>
+}
