@@ -3695,7 +3695,7 @@ jQuery.extend( {
 		var tuples = [
 
 				// action, add listener, callbacks,
-				// ... .then handlers, argument index, [final state]
+				// ... .then processors, argument index, [final state]
 				[ "notify", "progress", jQuery.Callbacks( "memory" ),
 					jQuery.Callbacks( "memory" ), 2 ],
 				[ "resolve", "done", jQuery.Callbacks( "once memory" ),
@@ -3813,7 +3813,7 @@ jQuery.extend( {
 									// Handle all other returned values
 									} else {
 
-										// Only substitute handlers pass on context
+										// Only substitute processors pass on context
 										// and multiple values (non-spec behavior)
 										if ( handler !== Identity ) {
 											that = undefined;
@@ -3844,7 +3844,7 @@ jQuery.extend( {
 											// Ignore post-resolution exceptions
 											if ( depth + 1 >= maxDepth ) {
 
-												// Only substitute handlers pass on context
+												// Only substitute processors pass on context
 												// and multiple values (non-spec behavior)
 												if ( handler !== Thrower ) {
 													that = undefined;
@@ -5125,7 +5125,7 @@ function safeActiveElement() {
 function on( elem, types, selector, data, fn, one ) {
 	var origFn, type;
 
-	// Types can be a map of types/handlers
+	// Types can be a map of types/processors
 	if ( typeof types === "object" ) {
 
 		// ( types-Object, selector, data )
@@ -5243,12 +5243,12 @@ jQuery.event = {
 			type = origType = tmp[ 1 ];
 			namespaces = ( tmp[ 2 ] || "" ).split( "." ).sort();
 
-			// There *must* be a type, no attaching namespace-only handlers
+			// There *must* be a type, no attaching namespace-only processors
 			if ( !type ) {
 				continue;
 			}
 
-			// If event changes its type, use the special event handlers for the changed type
+			// If event changes its type, use the special event processors for the changed type
 			special = jQuery.event.special[ type ] || {};
 
 			// If selector defined, determine special event api type, otherwise given type
@@ -5257,7 +5257,7 @@ jQuery.event = {
 			// Update special based on newly reset type
 			special = jQuery.event.special[ type ] || {};
 
-			// handleObj is passed to all event handlers
+			// handleObj is passed to all event processors
 			handleObj = jQuery.extend( {
 				type: type,
 				origType: origType,
@@ -5360,8 +5360,8 @@ jQuery.event = {
 				}
 			}
 
-			// Remove generic event handler if we removed something and no more handlers exist
-			// (avoids potential for endless recursion during removal of special event handlers)
+			// Remove generic event handler if we removed something and no more processors exist
+			// (avoids potential for endless recursion during removal of special event processors)
 			if ( origCount && !handlers.length ) {
 				if ( !special.teardown ||
 					special.teardown.call( elem, namespaces, elemData.handle ) === false ) {
@@ -5406,7 +5406,7 @@ jQuery.event = {
 			return;
 		}
 
-		// Determine handlers
+		// Determine processors
 		handlerQueue = jQuery.event.handlers.call( this, event, handlers );
 
 		// Run delegates first; they may want to stop propagation beneath us
@@ -5453,7 +5453,7 @@ jQuery.event = {
 			delegateCount = handlers.delegateCount,
 			cur = event.target;
 
-		// Find delegate handlers
+		// Find delegate processors
 		if ( delegateCount &&
 
 			// Support: IE <=9
@@ -5496,7 +5496,7 @@ jQuery.event = {
 			}
 		}
 
-		// Add the remaining (directly-bound) handlers
+		// Add the remaining (directly-bound) processors
 		cur = this;
 		if ( delegateCount < handlers.length ) {
 			handlerQueue.push( { elem: cur, handlers: handlers.slice( delegateCount ) } );
@@ -5991,7 +5991,7 @@ function cloneCopyEvent( src, dest ) {
 		return;
 	}
 
-	// 1. Copy private data: events, handlers, etc.
+	// 1. Copy private data: events, processors, etc.
 	if ( dataPriv.hasData( src ) ) {
 		pdataOld = dataPriv.get( src );
 		events = pdataOld.events;
@@ -8661,7 +8661,7 @@ jQuery.extend( jQuery.event, {
 			event :
 			new jQuery.Event( type, typeof event === "object" && event );
 
-		// Trigger bitmask: & 1 for native handlers; & 2 for jQuery (always true)
+		// Trigger bitmask: & 1 for native processors; & 2 for jQuery (always true)
 		event.isTrigger = onlyHandlers ? 2 : 3;
 		event.namespace = namespaces.join( "." );
 		event.rnamespace = event.namespace ?
@@ -8704,7 +8704,7 @@ jQuery.extend( jQuery.event, {
 			}
 		}
 
-		// Fire handlers on the event path
+		// Fire processors on the event path
 		i = 0;
 		while ( ( cur = eventPath[ i++ ] ) && !event.isPropagationStopped() ) {
 			lastElement = cur;
@@ -10320,7 +10320,7 @@ jQuery.parseHTML = function( data, context, keepScripts ) {
 
 	if ( !context ) {
 
-		// Stop scripts or inline event handlers from being executed immediately
+		// Stop scripts or inline event processors from being executed immediately
 		// by using document.implementation
 		if ( support.createHTMLDocument ) {
 			context = document.implementation.createHTMLDocument( "" );
