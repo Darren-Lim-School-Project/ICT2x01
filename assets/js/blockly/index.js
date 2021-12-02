@@ -55,6 +55,7 @@ function moveForward() {
 		topcord = topcord - 32;
 		if (!isOutOfBounds()) {
 			carloc[i].style.top = topcord + "px";
+			carloc[i].style.transform = "rotate(0deg)";
 		} else {
 			topcord = topcord + 32;
 		}
@@ -70,6 +71,7 @@ function moveDown() {
 		topcord = topcord + 32;
 		if (!isOutOfBounds()) {
 			carloc[i].style.top = topcord + "px";
+			carloc[i].style.transform = "rotate(180deg)";
 		} else {
 			topcord = topcord - 32;
 		}
@@ -85,6 +87,7 @@ function moveLeft() {
 		leftcord = leftcord - 32;
 		if (!isOutOfBounds()) {
 			carloc[i].style.left = leftcord + "px";
+			carloc[i].style.transform = "rotate(270deg)";
 		} else {
 			leftcord = leftcord + 32;
 		}
@@ -100,6 +103,7 @@ function moveRight() {
 		leftcord = leftcord + 32;
 		if (!isOutOfBounds()) {
 			carloc[i].style.left = leftcord + "px";
+			carloc[i].style.transform = "rotate(90deg)";
 		} else {
 			leftcord = leftcord - 32;
 		}
