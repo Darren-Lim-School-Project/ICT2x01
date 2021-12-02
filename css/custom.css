@@ -2,14 +2,14 @@
     position: relative;
     
     /* IMPORTANT: Make sure the width and height matches your map size. */
-    width: 100%;
-    height: 100%;
+    width: 320px;
+    height: 320px;
 }
 
 .challenge_image {
     position: relative;
-    width: 100%;
-    height: 100%;
+    width: 320px;
+    height: 320px;
 }
 
 .car_location {
@@ -17,16 +17,9 @@
     width:10%;
     height:10%;
     
-    /**
-    * Set the position of your car relative to your map.
-    *
-    * Formula for center of map: (mapSize / 2) + (carLength / 2)
-    * I.E. If car is 50px and map is 200px, center value is:
-    * (200px / 2) + 25px = 75px
-    */
-    
     /* Starting point is top90left40 */
-    top: 90%;
-    left: 40%;
+    /* Increments of 32 */
+    top: 288px;
+    left: 128px;
  }
  
