@@ -4,13 +4,20 @@ $difficulty = $_GET['difficulty'];
 // Here by default (won't ever be 'hit' cos if not one of the 3, will redirect)
 $dir_path = 'assets/img/challenges/easy/';
 
-if ($difficulty == 'easy') {
+if ($difficulty == 'easy')
+{
     $dir_path = 'assets/img/challenges/easy';
-} elseif ($difficulty == 'medium') {
+}
+elseif ($difficulty == 'medium')
+{
     $dir_path = 'assets/img/challenges/medium';
-} elseif ($difficulty == 'hard') {
+}
+elseif ($difficulty == 'hard')
+{
     $dir_path = 'assets/img/challenges/hard';
-} else {
+}
+else
+{
     header("Location: playgame.php");
     exit();
 }
@@ -49,8 +56,8 @@ include 'includes/sidebar.php';
 
 				<!-- navbar -->
                 <?php
-                include 'includes/nav.php';
-                ?>
+include 'includes/nav.php';
+?>
                 <!-- End of navbar -->
 
 				<div class="container-fluid py-4">
@@ -121,8 +128,8 @@ include 'includes/sidebar.php';
 
 				<!-- Footer -->
 				<?php
-    include 'includes/footer.php';
-    ?>
+include 'includes/footer.php';
+?>
 				<!-- End of Footer -->
 
 			</div>
@@ -177,26 +184,34 @@ include 'includes/sidebar.php';
 		</script>
 
 <?php
-
 function getRandomImage($dir_path = NULL)
 {
 
     // echo "param => " . $dir_path;
-    if (! empty($dir_path)) {
+    if (!empty($dir_path))
+    {
         $files = scandir($dir_path);
         $count = count($files);
-        if ($count > 2) {
+        if ($count > 2)
+        {
             $index = rand(2, ($count - 1));
             $filename = $files[$index];
-            if (strpos($filename, 'jpeg') !== false) {
+            if (strpos($filename, 'jpeg') !== false)
+            {
                 echo '<img src="' . $dir_path . "/" . $filename . '" alt="' . $filename . '" class="img-fluid border-radius-lg challenge_image">';
-            } else {
+            }
+            else
+            {
                 getRandomImage($dir_path);
             }
-        } else {
+        }
+        else
+        {
             return "The directory is empty!";
         }
-    } else {
+    }
+    else
+    {
         return "Please enter valid path to image directory!";
     }
 }
