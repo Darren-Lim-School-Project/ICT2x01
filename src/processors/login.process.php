@@ -1,5 +1,5 @@
 <?php
-
+require dirname(__DIR__) . '../../vendor/autoload.php';
 if(isset($_POST["login"])) {
 
     // Grabbing the data
@@ -7,8 +7,8 @@ if(isset($_POST["login"])) {
     $password = $_POST["password"];
 
     // Instantiate Class
-    include "../mvc/controller/loginController.php";
-    $login = new LoginController($username,$password);
+    #include "../mvc/controller/loginController.php";
+    $login = new \Controller\LoginController($username,$password);
     echo $login->loginUser();
     // Running error Handlers and user login
     if($login->loginUser() == 1){

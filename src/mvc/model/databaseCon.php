@@ -1,7 +1,7 @@
 <?php
 
-    use mysql_xdevapi\Exception;
-
+    #use mysql_xdevapi\Exception;
+    namespace Model;
     class databaseCon {
 
         protected function connect() {

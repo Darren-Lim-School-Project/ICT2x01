@@ -4,11 +4,10 @@
 <head>
 
 <?php
-//-require '../../../vendor/autoload.php';
+require '../../../vendor/autoload.php';
 include '../../../includes/head.php';
 include '../../processors/session.process.php';
-include "../../mvc/model/dashboard.php";
-$dashboard = new dashboard();
+$dashboard = new \Model\dashboard();
 ?>
 
     <title>IR-Acer - Dashboard</title>

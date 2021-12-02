@@ -1,5 +1,5 @@
 <?php
-
+namespace Model;
 require_once "../mvc/model/databaseCon.php";
 class updateClass extends databaseCon
 {

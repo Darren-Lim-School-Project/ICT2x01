@@ -1,6 +1,6 @@
 <?php
-
-require_once "../mvc/model/databaseCon.php";
+namespace Model;
+#require_once "../mvc/model/databaseCon.php";
     class loginClass extends databaseCon
     {
 
