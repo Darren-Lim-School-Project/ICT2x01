@@ -32,25 +32,25 @@ var ctx = document.getElementById("myBarChart");
 var myBarChart = new Chart(ctx, {
   type: 'bar',
   data: {
-    labels: ["January", "February", "March", "April", "May", "June"],
+    labels: ["Challenges"],
     datasets: [{
       label: "Easy",
       backgroundColor: "#4e73df",
       hoverBackgroundColor: "#2e59d9",
       borderColor: "#4e73df",
-      data: [4, 5, 6, 7, 9, 14],
+      data: [4],
     },{
       label: "Medium",
       backgroundColor: "#1cc88a",
       hoverBackgroundColor: "#17a673",
       borderColor: "#1cc88a",
-      data: [15, 12, 1, 1, 21, 4],
+      data: [15],
     },{
       label: "Hard",
       backgroundColor: "#36b9cc",
       hoverBackgroundColor: "#2c9faf",
       borderColor: "#36b9cc",
-      data: [21, 12, 21, 4, 21, 14],
+      data: [21],
     }],
   },
   options: {
