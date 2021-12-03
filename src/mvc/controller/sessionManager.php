@@ -1,5 +1,4 @@
 <?php
-namespace Controller;
 session_start();
 // set timeout period in seconds
 $inactive = 900;

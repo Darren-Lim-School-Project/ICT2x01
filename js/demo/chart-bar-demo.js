@@ -32,25 +32,13 @@ var ctx = document.getElementById("myBarChart");
 var myBarChart = new Chart(ctx, {
   type: 'bar',
   data: {
-    labels: ["Challenges"],
+    labels: ["January", "February", "March", "April", "May", "June"],
     datasets: [{
-      label: "Easy",
+      label: "Revenue",
       backgroundColor: "#4e73df",
       hoverBackgroundColor: "#2e59d9",
       borderColor: "#4e73df",
-      data: [easy],
-    },{
-      label: "Medium",
-      backgroundColor: "#1cc88a",
-      hoverBackgroundColor: "#17a673",
-      borderColor: "#1cc88a",
-      data: [medium],
-    },{
-      label: "Hard",
-      backgroundColor: "#36b9cc",
-      hoverBackgroundColor: "#2c9faf",
-      borderColor: "#36b9cc",
-      data: [difficult],
+      data: [4215, 5312, 6251, 7841, 9821, 14984],
     }],
   },
   options: {
@@ -79,11 +67,13 @@ var myBarChart = new Chart(ctx, {
       }],
       yAxes: [{
         ticks: {
+          min: 0,
+          max: 15000,
           maxTicksLimit: 5,
           padding: 10,
           // Include a dollar sign in the ticks
           callback: function(value, index, values) {
-            return number_format(value);
+            return '$' + number_format(value);
           }
         },
         gridLines: {
@@ -113,7 +103,7 @@ var myBarChart = new Chart(ctx, {
       callbacks: {
         label: function(tooltipItem, chart) {
           var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || '';
-          return datasetLabel + ': ' + number_format(tooltipItem.yLabel);
+          return datasetLabel + ': $' + number_format(tooltipItem.yLabel);
         }
       }
     },
