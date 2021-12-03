@@ -21,11 +21,11 @@ class dashboard extends databaseCon {
     }
     public function getSpeed($carid) {
         $car = $this->cardbconnection($carid);
-        echo $car['speed'];
+        return $car['speed'];
     }
     public function getObstacle($carid) {
         $car = $this->cardbconnection($carid);
-        echo $car['obstacle'];
+        return $car['obstacle'];
     }
     function getIsConnected() {
         return $this->isConnected;
@@ -36,30 +36,30 @@ class dashboard extends databaseCon {
     }
     public function getWins($carid) {
         $car = $this->gamedbconnection($carid);
-        echo $car['wins'];
+        return $car['wins'];
     }
     public function getLosses($carid) {
         $car = $this->gamedbconnection($carid);
-        echo $car['losses'];
+        return $car['losses'];
     }
     function getGameLevel() {
         return $this->gameLevel;
     }
     public function getCompletion($carid) {
         $car = $this->gamedbconnection($carid);
-        echo $car['completion'];
+        return $car['completion'];
     }
     public function getEasy($carid) {
         $car = $this->gamedbconnection($carid);
-        echo $car['easy'];
+        return $car['easy'];
     }
     public function getMedium($carid) {
         $car = $this->gamedbconnection($carid);
-        echo $car['medium'];
+        return $car['medium'];
     }
     public function getDifficult($carid) {
         $car = $this->gamedbconnection($carid);
-        echo $car['difficult'];
+        return $car['difficult'];
     }
 
     /*public function getConnection($carid) {
