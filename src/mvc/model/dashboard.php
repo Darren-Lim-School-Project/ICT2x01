@@ -2,7 +2,8 @@
 namespace Model;
 
 class dashboard extends databaseCon {
-    private  bool $isConnected = False;
+    private  bool $isConnected = True;
+    private int $gameLevel = 20;
 
     public function cardbconnection($carid) {
         $sql = "SELECT * FROM car WHERE car_id = ? ORDER BY id desc";
@@ -15,7 +16,7 @@ class dashboard extends databaseCon {
         $sql = "SELECT * FROM game WHERE car_id = ?";
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute($carid);
-        $car = $stmt->fetchall();
+        $car = $stmt->fetch();
         return $car;
     }
     public function getSpeed($carid) {
@@ -40,6 +41,9 @@ class dashboard extends databaseCon {
     public function getLosses($carid) {
         $car = $this->gamedbconnection($carid);
         echo $car['losses'];
+    }
+    function getGameLevel() {
+        return $this->gameLevel;
     }
     public function getCompletion($carid) {
         $car = $this->gamedbconnection($carid);
@@ -78,7 +82,4 @@ class dashboard extends databaseCon {
         }
     }*/
 }
-
-$dashboard = new dashboard();
-$dashboard->getSpeed(1);
 ?>
