@@ -3,9 +3,13 @@
 
 <head>
 
-<?php 
-include '../../../includes/head.php';
+<?php
 include '../../processors/session.process.php';
+?>
+<head>
+<?php
+    include '../../../includes/head.php';
+
 ?>
 
     <title>IR-Acer - Dashboard</title>

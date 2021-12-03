@@ -1,6 +1,5 @@
 <?php
 session_start();
-session_destroy();
+unset($_SESSION['role']);
 header('Location: ../mvc/view/login.php');
 exit;
-?>
