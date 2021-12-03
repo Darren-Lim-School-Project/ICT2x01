@@ -1,8 +1,9 @@
 <?php
+namespace Controller;
+#require_once "../mvc/model/loginClass.php";
+require '../../vendor/autoload.php';
 
-require_once "../mvc/model/loginClass.php";
-
-class loginController extends loginClass {
+class loginController extends \Model\loginClass {
     private $username;
     private $password;
 

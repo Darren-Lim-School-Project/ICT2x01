@@ -1,4 +1,5 @@
 <?php
+namespace Controller;
 require_once "../mvc/model/updateClass.php";
 require_once "loginController.php";
 class updateController extends updateClass
