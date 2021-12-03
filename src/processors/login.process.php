@@ -17,8 +17,8 @@ if(isset($_POST["login"])) {
     }
     else
     {
-        //Going back to the front page
-        header("location: ../mvc/view/index.php?login=false");
+        //Going back to the login page
+        header("location: ../mvc/view/login.php?login=false");
     }
 
 

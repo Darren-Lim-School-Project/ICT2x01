@@ -173,7 +173,7 @@
                 <div
                         class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                         aria-labelledby="userDropdown">
-                    <a class="dropdown-item" href=".adminsettings.php"> <i
+                    <a class="dropdown-item" href="adminsettings.php"> <i
                                 class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>Settings
 
                         <a class="dropdown-item" href="#" data-toggle="modal"

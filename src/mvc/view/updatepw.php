@@ -1,5 +1,6 @@
 <?php
 include '../../processors/session.process.php';
+include '../../processors/sessionsec.process.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,8 +20,8 @@ include '../../processors/session.process.php';
     <!-- Custom fonts for this template-->
     <link href="../../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+            href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+            rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="../../../css/sb-admin-2.min.css" rel="stylesheet">
@@ -65,7 +66,7 @@ include '../../processors/session.process.php';
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">IR-Acer Admin Settings</h1>
                                     </div>
-                                    <form action="../controller/updatepw_process.php" method="post" class="user">
+                                    <form action="../../processors/updatepw.process.php" method="post" class="user">
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user" id="currentPassword" name="currentPassword"
                                                    required placeholder="Current Password">
@@ -80,9 +81,42 @@ include '../../processors/session.process.php';
                                                        id="repeatPassword" name="repeatPassword" required placeholder="Repeat New Password">
                                             </div>
                                         </div>
+                                        <?php
+                                        if (isset($_GET['result'])){
+                                            if($_GET['result'] == "success"){
+                                                ?>
+                                                <a style="color: #28a745">Your password has been successfully updated!</a> <br>
+                                                <?php
+                                            }
+                                            else if ($_GET['result'] == "unsuccessful"){
+                                                ?>
+                                                <a style="color: #b21d22">Something went wrong, your password was not updated.</a> <br>
+                                                <?php
+                                            }
+                                            else if ($_GET['result'] == "nomatch"){
+                                                ?>
+                                                <a style="color: #b21d22">The New Passwords do not match! Your Password was not updated.</a> <br>
+                                                <?php
+                                            }
+                                        }
+                                        ?>
+                                        <?php
+                                        if (isset($_GET['error'])){
+                                            if($_GET['error'] == "emptyinput"){
+                                                ?>
+                                                <a style="color: #b21d22">Invalid Input! Do not leave any fields empty!</a> <br>
+                                                <?php
+                                            }
+                                            else if ($_GET['error'] == "wrongpassword"){
+                                                ?>
+                                                <a style="color: #b21d22">Invalid Current Password. Password was not updated.</a> <br>
+                                                <?php
+                                            }
+                                        }
+                                        ?>
                                         <br>
                                         <br>
-                                        <button class="btn btn-primary btn-user btn-block" type="submit">Update Password</button>
+                                        <button class="btn btn-primary btn-user btn-block" name=updatepw type="submit">Update Password</button>
                                     </form>
                                     <hr>
                                 </div>
@@ -94,13 +128,13 @@ include '../../processors/session.process.php';
             </div>
         </div>
         <?php
-        include '../../../includes/footer.php';
+        include '../../../includes/footer.php'
         ?>
     </div>
 </div>
 
 <?php
-include "../../../includes/javascriptSrc.php";
+include '../../../includes/javascriptSrc.php'
 ?>
 
 </body>
