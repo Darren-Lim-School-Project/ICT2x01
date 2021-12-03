@@ -9,7 +9,7 @@ var myPieChart2 = new Chart(ctx2, {
   data: {
     labels: ["Completed", "Incompleted"],
     datasets: [{
-      data: [80, 20],
+      data: [completion, incomplete],
       backgroundColor: ['#4e73df', '#36b9cc'],
       hoverBackgroundColor: ['#2e59d9', '#2c9faf'],
       hoverBorderColor: "rgba(234, 236, 244, 1)",
@@ -41,7 +41,7 @@ var myPieChart = new Chart(ctx, {
   data: {
     labels: ["Wins", "Losses"],
     datasets: [{
-      data: [55, 30],
+      data: [wins, losses],
       backgroundColor: ['#4e73df', '#36b9cc'],
       hoverBackgroundColor: ['#2e59d9', '#2c9faf'],
       hoverBorderColor: "rgba(234, 236, 244, 1)",
@@ -73,7 +73,7 @@ var challengespie = new Chart(ctx3, {
   data: {
     labels: ["Easy", "Medium", "Difficult"],
     datasets: [{
-      data: [80, 20, 50],
+      data: [easy, medium, difficult],
       backgroundColor: ['#4e73df', '#36b9cc','#1cc88a'],
       hoverBackgroundColor: ['#2e59d9', '#2c9faf', '#17a673'],
       hoverBorderColor: "rgba(234, 236, 244, 1)",
