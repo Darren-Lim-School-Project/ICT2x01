@@ -6,26 +6,40 @@ class dashboard extends databaseCon {
     private int $gameLevel = 20;
 
     public function cardbconnection($carid) {
-        $sql = "SELECT * FROM car WHERE car_id = ? ORDER BY id desc";
-        $stmt = $this->connect()->prepare($sql);
-        $stmt->execute($carid);
-        $car = $stmt->fetch();
+
+        $conn = $this->connect();
+        $stmt = $conn->prepare("SELECT * FROM car WHERE car_id = " . $carid . " ORDER BY id desc");
+        $car = $stmt->execute();
+        //$car = $result->fetchArray(SQLITE3_ASSOC);
         return $car;
     }
     public function gamedbconnection($carid) {
-        $sql = "SELECT * FROM game WHERE car_id = ?";
+        $sql = "SELECT TOP 1 * FROM game WHERE car_id = " . $carid;
         $stmt = $this->connect()->prepare($sql);
-        $stmt->execute($carid);
-        $car = $stmt->fetch();
+        $stmt->execute();
+        $car = $stmt->get_result();
         return $car;
     }
     public function getSpeed($carid) {
         $car = $this->cardbconnection($carid);
-        return $car['speed'];
+        $speed = 0;
+        $row = $car->fetchArray(SQLITE3_ASSOC);
+
+        if ($row != "") {
+            $speed = $row['speed'];
+        }
+        return $speed;
     }
     public function getObstacle($carid) {
         $car = $this->cardbconnection($carid);
-        return $car['obstacle'];
+        $speed = 0;
+        $row = $car->fetchArray(SQLITE3_ASSOC);
+
+        if ($row != "") {
+            $speed = $row['obstacle'];
+        }
+
+        return $speed;
     }
     function getIsConnected() {
         return $this->isConnected;

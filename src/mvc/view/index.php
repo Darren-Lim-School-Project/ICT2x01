@@ -24,6 +24,17 @@
     <!-- Custom styles for this template-->
     <!--     <link href="../css/sb-admin-2.min.css" rel="stylesheet"> -->
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+        setInterval(function() {
+            $("#autodata").on('load', function() {<?php echo $dashboard->getSpeed($carid); ?>});
+            //refresh();
+            //location.reload();
+        }, 10000);
+        });
+    </script>
+
 </head>
 
 <body id="page-top">
@@ -69,8 +80,8 @@
                                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                             Speed
                                         </div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $dashboard->getSpeed($carid); ?>
-                                            200 MPH
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                            <?php echo $dashboard->getSpeed($carid); ?> MPH
                                         </div>
 
                                     </div>
@@ -92,7 +103,7 @@
                                             Default Obstacle Detection (cm)
                                         </div>
                                         <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $dashboard->getObstacle($carid); ?>
-                                            2 CM
+                                            CM
                                         </div>
                                     </div>
                                     <div class="col-auto">
