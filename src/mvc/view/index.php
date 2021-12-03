@@ -69,7 +69,7 @@
                                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                             Speed
                                         </div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800"><?php $dashboard->getSpeed($carid); ?>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $dashboard->getSpeed($carid); ?>
                                             200 MPH
                                         </div>
 
@@ -91,7 +91,7 @@
                                         <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                             Default Obstacle Detection (cm)
                                         </div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800"><?php $dashboard->getObstacle($carid); ?>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $dashboard->getObstacle($carid); ?>
                                             2 CM
                                         </div>
                                     </div>
