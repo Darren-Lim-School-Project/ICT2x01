@@ -10,7 +10,6 @@ class loginController extends loginClass {
     {
         $this->username = $username;
         $this->password = $password;
-
     }
     public function loginUser(){
         if($this->isEmptyInput() == true){
@@ -41,11 +40,8 @@ class loginController extends loginClass {
 
     private function isEmptyInput(): bool
     {
-        $result =false;
-
         if(empty($this->username) || empty($this->password)){
-            $results = true;
-            return $result;
+            return true;
         }
         else{
             return false;

@@ -18,24 +18,20 @@ class updateController extends updateClass
 
         if ($this->isEmptyInput() == true) {
             //echo "Empty Input!";
-            header("location: ../updatepw.php?error=emptyinput");
+            header("location: ../updateAdmin.php?error=emptyinput");
             exit();
         }
         if ($this->isValidPassword() == true) {
             if ($this->updatePw($this->newPassword, $this->username, $this->password) == true) {
                 return true;
             } else {
-                header("location: ../updatepw.php?error=unsuccessful");
+                header("location: ../updateAdmin.php?error=unsuccessful");
                 exit();
             }
         }
-        header("location: ../mvc/view/updatepw.php?error=wrongpassword");
+        header("location: ../mvc/view/updateAdmin.php?error=wrongpassword");
         exit();
     }
-
-
-
-
 
     private function isValidPassword(): bool
     {
@@ -51,15 +47,11 @@ class updateController extends updateClass
     }
     private function isEmptyInput(): bool
     {
-        $result =false;
-
         if(empty($this->username) || empty($this->password) || empty($this->newPassword)){
-            $results = true;
-            return $result;
+            return true;
         }
         else{
-            $result = false;
-            return $result;
+            return false;
         }
     }
 }

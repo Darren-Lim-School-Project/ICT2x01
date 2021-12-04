@@ -9942,8 +9942,8 @@ a:focus {
 }
 
 .bg-gradient-dark {
-  background-color: #5a5c69;
-  background-image: linear-gradient(180deg, #5a5c69 10%, #373840 100%);
+  background-color: #000000;
+  background-image: linear-gradient(180deg, #000000 10%, #000000 100%);
   background-size: cover;
 }
 
@@ -10859,7 +10859,10 @@ a:focus {
     height: calc(20rem - 43px) !important;
   }
 }
-
+.admin-image{
+  width: 100%;
+  height: auto;
+}
 .bg-login-image {
   background: url("https://source.unsplash.com/K4mSJ7kc0As/600x800");
   background-position: center;

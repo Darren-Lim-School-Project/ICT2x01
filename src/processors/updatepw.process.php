@@ -17,17 +17,17 @@ if(isset($_POST["updatepw"])) {
     }
     else
     {
-        header("location: ../mvc/view/updatepw.php?result=nomatch");
+        header("location: ../mvc/view/updateAdmin.php?result=nomatch");
     }
     // Running error Handlers and user login
     if($update->updatePassword() == true){
         //Going back to the front page
-        header("location: ../mvc/view/updatepw.php?result=success");
+        header("location: ../mvc/view/updateAdmin.php?result=success");
     }
     else
     {
         //Going back to the login page
-        header("location: ../mvc/view/updatepw.php?result=unsuccessful2");
+        header("location: ../mvc/view/updateAdmin.php?result=unsuccessful2");
     }
 
 
