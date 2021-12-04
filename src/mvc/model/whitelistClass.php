@@ -1,6 +1,8 @@
 <?php
 
-require_once "../mvc/model/databaseCon.php";
+
+include "databaseCon.php";
+
     class whitelistClass extends databaseCon
     {
         protected function getStatus($carId): bool
@@ -44,4 +46,25 @@ require_once "../mvc/model/databaseCon.php";
             /* Else Something Went Wrong and Entry is still there */
             return false;
         }
+
+        protected function getArrayData($mode)
+        {
+            $id = [];
+            $carId = [];
+            $conn = $this->connect();
+            $query = $conn->query("SELECT * FROM whitelist");
+            while($row = $query->fetchArray()){
+                $id[] = $row['id'];
+                $carId[] = $row['carId'];
+            }
+            if($mode == 1){
+                return $id;
+            }
+            else if($mode == 2){
+                return $carId;
+            }
+            return true;
+        }
+
+
     }

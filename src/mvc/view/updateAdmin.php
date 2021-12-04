@@ -59,12 +59,12 @@ include '../../processors/sessionsec.process.php';
 
                         <!-- Nested Row within Card Body -->
                         <div class="row" >
-                            <div class="col-lg-5 d-none d-lg-block bg-register-image" ></div>
+                            <div class="col-lg-5 d-none d-lg-block bg-login-image" ></div>
                             <div class="col-lg-7">
                                 <div class="p-5">
                                     <br>
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">IR-Acer Admin Settings</h1>
+                                        <h1 class="h4 text-gray-900 mb-4">Change Admin Password</h1>
                                     </div>
                                     <form action="../../processors/updatepw.process.php" method="post" class="user">
                                         <div class="form-group">
@@ -74,7 +74,9 @@ include '../../processors/sessionsec.process.php';
                                         <div class="form-group row">
                                             <div class="col-sm-6 mb-3 mb-sm-0">
                                                 <input type="password" class="form-control form-control-user"
-                                                       id="newPassword" name="newPassword" required placeholder="New Password" >
+                                                       id="newPassword" name="newPassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                                                       title="Must contain at least one number, one uppercase letter, one lowercase letter, and at least 8 or more characters"
+                                                       required placeholder="New Password" >
                                             </div>
                                             <div class="col-sm-6">
                                                 <input type="password" class="form-control form-control-user"

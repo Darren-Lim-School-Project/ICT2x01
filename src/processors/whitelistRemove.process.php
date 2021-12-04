@@ -1,5 +1,6 @@
 <?php
-
+include 'session.process.php';
+include 'sessionsec.process.php';
 if(isset($_POST["removecar"])) {
 
     // Grabbing the data

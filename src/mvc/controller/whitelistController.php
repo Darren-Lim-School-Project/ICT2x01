@@ -1,8 +1,15 @@
 <?php
 
-require_once "../mvc/model/whitelistClass.php";
+$curPageName = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1);
+if($curPageName == "whitelistView.php") {
+    include "../model/whitelistClass.php";
+    include "../../interfaces/IDatabase.php";
+} else {
+    require_once "../mvc/model/whitelistClass.php";
+    include "../interfaces/IDatabase.php";
+}
 
-class whitelistController extends whitelistClass {
+class whitelistController extends whitelistClass implements IDatabase {
     private $carId;
 
     public function __construct($carId)
@@ -76,5 +83,9 @@ class whitelistController extends whitelistClass {
             return false;
         }
 
+    }
+
+    public function getTableData($mode){
+        return $this->getArrayData($mode);
     }
 }

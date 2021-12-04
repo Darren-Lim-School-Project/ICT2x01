@@ -1,8 +1,7 @@
 <?php
 include '../../processors/session.process.php';
 include '../../processors/sessionsec.process.php';
-include '../model/databaseCon.php';
-$data = new databaseCon();
+include '../controller/whitelistController.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -51,8 +50,9 @@ $data = new databaseCon();
                                     <th>Car Code</th>
                                 </tr>
                                 <?php
-                                $idData = $data->selectWhitelist(1);
-                                $carIdData = $data->selectWhitelist(2);
+                                $data = new whitelistController("//");
+                                $idData = $data->getTableData(1);
+                                $carIdData = $data->getTableData(2);
                                 ?>
                                 </thead>
                                 <tfoot>

@@ -45,7 +45,6 @@ include '../../processors/session.process.php';
                                 }
                                 if (isset($_GET['disconnect'])){
                                     if($_GET['disconnect'] == "true"){
-                                        session_destroy();
                                         ?>
                                         <a style="color: #28a745">Car is successfully disconnected!</a> <br>
                                         <?php
@@ -66,9 +65,22 @@ include '../../processors/session.process.php';
                                     <button class="btn btn-primary btn-user btn-block" name="connect" type="submit">CONNECT</button>
                                 </form>
                                 <hr>
-                                <div class="text-center">
-                                    <a class="small" href="login.php">Login as Administrator</a>
-                                </div>
+                                <?php
+                                if(!isset($_SESSION['role'])){ ?>
+                                    <div class="text-center">
+                                        <a class="small" href="login.php">Login as Administrator</a>
+                                    </div>
+                                <?php
+                                } else
+                                { ?>
+                                    <div class="text-center">
+                                        <a class="small" href="javascript:history.back()">Go Back</a>
+                                    </div>
+
+                                    <?php
+                                }
+                                ?>
+
                             </div>
                         </div>
                     </div>

@@ -4,10 +4,10 @@ require_once "../mvc/model/databaseCon.php";
 class updateClass extends databaseCon
 {
 
-    protected function updatePw($newPassword, $username, $password )
+    protected function updatePw($hashedNew, $username, $hashedOld, $newPassword)
     {
         $conn = $this->connect();
-        $stmt = $conn->query("UPDATE `user` SET `password` = '$newPassword' WHERE `username` = '$username' AND `password` = '$password'");
+        $stmt = $conn->query("UPDATE `user` SET `password` = '$hashedNew' WHERE `username` = '$username' AND `password` = '$hashedOld'");
         $conn->exec($stmt);
         //Run a check
         $check = new loginController($username, $newPassword);

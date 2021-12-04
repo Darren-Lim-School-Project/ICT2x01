@@ -113,7 +113,7 @@ function moveRight() {
 Blockly.Blocks['up'] = {
 	init: function() {
 		this.appendValueInput("VALUE").setCheck("String").appendField(new Blockly.FieldImage(
-			"./assets/img/movement_up.png",
+			"../../../assets/img/movement_up.png",
 			50,
 			50,
 			"*"));
@@ -128,7 +128,7 @@ Blockly.Blocks['up'] = {
 Blockly.Blocks['down'] = {
 	init: function() {
 		this.appendValueInput("VALUE").setCheck("String").appendField(new Blockly.FieldImage(
-			"./assets/img/movement_down.png",
+			"../../../assets/img/movement_down.png",
 			50,
 			50,
 			"*"));
@@ -144,7 +144,7 @@ Blockly.Blocks['down'] = {
 Blockly.Blocks['left'] = {
 	init: function() {
 		this.appendValueInput("VALUE").setCheck("String").appendField(new Blockly.FieldImage(
-			"./assets/img/movement_left.png",
+			"../../../assets/img/movement_left.png",
 			50,
 			50,
 			"*"));
@@ -159,7 +159,7 @@ Blockly.Blocks['left'] = {
 Blockly.Blocks['right'] = {
 	init: function() {
 		this.appendValueInput("VALUE").setCheck("String").appendField(new Blockly.FieldImage(
-			"./assets/img/movement_right.png",
+			"../../../assets/img/movement_right.png",
 			50,
 			50,
 			"*"));
