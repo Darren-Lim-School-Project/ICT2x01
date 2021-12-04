@@ -9,8 +9,11 @@ include '../../processors/sessionsec.process.php';
     <?php
     include '../../../includes/head.php';
     ?>
-</head>
 
+</head>
+<style>
+
+</style>
 <body class="bg-gradient-primary">
 
 <!-- Page Wrapper -->
@@ -53,12 +56,12 @@ include '../../processors/sessionsec.process.php';
 
                                     <form class="user">
 
-                                        <a href="../../../src/mvc/view/updatepw.php" class="btn btn-primary btn-user btn-block">
-                                            <i class="fas fa-key fa-fw"></i> Change Password
+                                        <a href="updateAdmin.php" class="btn btn-primary btn-user btn-block">
+                                            <i class="fas fa-key fa-fw"></i> &nbsp;Change Password
                                         </a>
                                         <hr>
-                                        <a href="../../../src/mvc/view/whitelist.php" class="btn btn-primary btn-user btn-block">
-                                            <i class="fas fa-car-alt fa-fw"></i> Whitelist Car
+                                        <a href="whitelistSettings.php" class="btn btn-primary btn-user btn-block">
+                                            <i class="fas fa-car-alt fa-fw"></i> &nbsp;Whitelist Car
                                         </a>
                                     </form>
 

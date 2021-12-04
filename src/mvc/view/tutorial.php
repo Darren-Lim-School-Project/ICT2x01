@@ -1,3 +1,6 @@
+<?php
+include '../../processors/session.process.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,19 +11,14 @@ include '../../../includes/head.php';
 ?>
 
 <title>IR-Acer - Tutorial</title>
-
-<!-- Custom fonts for this template-->
-<link href="../../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet"
-      type="text/css">
-<link
-	href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-	rel="stylesheet">
-
-<!-- Custom styles for this template-->
-<link href="../../../css/sb-admin-2.min.css" rel="stylesheet">
-
 </head>
-
+<style>
+    /*CSS*/
+    video {
+        width: 100%;
+        max-height: 100%;
+    }
+</style>
 <body id="page-top">
 
 	<!-- Page Wrapper -->
@@ -42,13 +40,55 @@ include '../../../includes/sidebar.php';
                 ?>
                 <!-- End of navbar -->
 
-				<!-- Begin Page Content -->
-				<div class="container-fluid">
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
 
-					<!-- Page Heading -->
-					<h1 class="h3 mb-4 text-gray-800">Tutorial</h1>
+                    <!-- Page Heading -->
+                    <h1 class="h3 mb-4 text-gray-800">Tutorial</h1>
 
-				</div>
+                    <!-- Basic Card Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">How To Play IR-Acer</h6>
+                        </div>
+                        <div class="card-body">
+                            <h3>What is IR-Acer?</h3>
+                            <br>
+                            <p>With the rise of the digital age, people are more connected than they ever have been. Children as young as primary school students are able to use social media and internet services through their personal smartphones. Schools are also looking towards using smart-devices to help cultivate their learning.
+                                To further support schools in their efforts, this project aims to instill logical thinking and problem-solving skills amongst the younger generation by creating a fun and interactive toy that these children can use.
+                                IR-Acer is a three-wheel robot-car that is made for children above the age of 5-6 to get involved in the world of programmable robots. IR-Acer will exercise their logical and problem-solving skills in a fun and creative manner by demonstrating how instructions (code blocks) can interact with the robot car.
+                                Children can set up obstacles and learn how to program a route, which will allow them to visualise the path needed for the robot to traverse and reach its end goal. IR-Acer will allow children to nurture their problem-solving skills and get instant feedback on whether their pre-programmed routes work or not.
+                                Controlling IR-Acer’s movement can be done in real time or can be pre-programmed through the web UI. The web UI will also be able to display robot system information.</p>
+                            <br>
+                            <hr>
+                            <h3>Objectives:</h3>
+                            <br>
+                            <ol>
+                                <li>Players are to use the coding blocks to reach the end goal highlighted as a green square.</li>
+                                <li>Players that stick to the suggested route (in blue) will earn more points!</li>
+                                <li>Going out of bounds will result in an instant loss!</li>
+                            </ol>
+
+                            <br>
+                            <hr>
+                            <h3>How to Play:</h3>
+                            <br>
+                            <ul>
+                                <li>Drag and drop the Coding blocks and click on send commands!</li>
+                                <li>Watch the IR-Acer device move in real life too!</li>
+                                <li>Be careful not to hit any obstacles in real-life! Causing the car to stop will deduct points!</li>
+                            </ul>
+                            <br>
+                            <hr>
+                            <h3>IR-Acer Car Introduction Video:</h3>
+                            <br>
+                            <video width="1280" height="720" controls>
+                                <source src="../../../videos/tutorial.mp4" type="video/mp4">
+                            </video>
+                        </div>
+
+                    </div>
+                </div>
 				<!-- /.container-fluid -->
 
 			</div>
@@ -71,38 +111,10 @@ include '../../../includes/footer.php';
 		class="fas fa-angle-up"></i>
 	</a>
 
-	<!-- Logout Modal-->
-	<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog"
-		aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-					<button class="close" type="button" data-dismiss="modal"
-						aria-label="Close">
-						<span aria-hidden="true">×</span>
-					</button>
-				</div>
-				<div class="modal-body">Select "Logout" below if you are ready to
-					end your current session.</div>
-				<div class="modal-footer">
-					<button class="btn btn-secondary" type="button"
-						data-dismiss="modal">Cancel</button>
-					<a class="btn btn-primary" href="login.html">Logout</a>
-				</div>
-			</div>
-		</div>
-	</div>
-
 	<!-- Bootstrap core JavaScript-->
-	<script src="../../../vendor/jquery/jquery.min.js"></script>
-	<script src="../../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-	<!-- Core plugin JavaScript-->
-	<script src="../../../vendor/jquery-easing/jquery.easing.min.js"></script>
-
-	<!-- Custom scripts for all pages-->
-	<script src="../../../js/sb-admin-2.min.js"></script>
+    <?php
+    include "../../../includes/javascriptSrc.php";
+    ?>
 
 </body>
 

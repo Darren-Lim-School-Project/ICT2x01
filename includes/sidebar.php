@@ -24,41 +24,61 @@
 	<hr class="sidebar-divider">
 
 	<!-- Heading -->
-	<div class="sidebar-heading">User Menu</div>
+	<div class="sidebar-heading">Menu</div>
 
 	<!-- Nav Item - Pages Collapse Menu -->
-
+    <?php
+    if(isset($_SESSION['carId'])){
+    ?>
 	<li class="nav-item"><a class="nav-link collapsed"
-		href="playgame.php"> <span> <i class="fas fa-fw fa-play"></i> Play
+		href="playgame.php"> <i class="fas fa-fw fa-play"></i><span> Play
 				Game
-		</span>
-	</a>
-	
+            </span></a></li>
+    <?php
+    }
+    ?>
 	<li class="nav-item"><a class="nav-link collapsed" href="tutorial.php">
-			<span> <i class="fas fa-fw fa-question-circle"></i> Tutorial
+			 <i class="fas fa-fw fa-question-circle"></i><span> Tutorial
 		</span>
-	</a>
+        </a></li>
 	
 	<li class="nav-item"><a class="nav-link collapsed"
-		href="leaderboard.php"> <span> <i class="fas fa-fw fa-users"></i>
+		href="leaderboard.php">  <i class="fas fa-fw fa-users"></i><span>
 				Leaderboard
 		</span>
-	</a>
+        </a></li>
 	
 	<li class="nav-item"></li>
-
-	<!--	 Divider 
-	<hr class="sidebar-divider">-->
-
-
-
-	<!-- Divider -->
-	<hr class="sidebar-divider d-none d-md-block">
+    <!-- Divider -->
+    <hr class="sidebar-divider d-none d-md-block">
 
 	<!-- Sidebar Toggler (Sidebar) -->
 	<div class="text-center d-none d-md-inline">
 		<button class="rounded-circle border-0" id="sidebarToggle"></button>
 	</div>
+    <!-- Divider -->
+
+    <hr class="sidebar-divider d-none d-md-block">
+    <?php
+    if(isset($_SESSION['carId'])){
+        ?>
+        <li class="nav-item"><a class="nav-link collapsed" id="disconnect"
+                            href="../../../src/processors/disconnect.process.php">  <i class="fas fa-car-crash"></i><span>
+        Disconnect Car
+		</span>
+        </a></li>
+    <?php
+    } else { ?>
+        <li class="nav-item"><a class="nav-link collapsed" id="disconnect"
+                            href="../../../src/mvc/view/connect.php">  <i class="fas fa-car-alt"></i><span>
+        Connect IR-Acer
+		</span>
+        </a></li>
+  <?php
+    }
+
+    ?>
+
 
 </ul>
 <!-- End of Sidebar -->
