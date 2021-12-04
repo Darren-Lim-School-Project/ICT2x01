@@ -284,7 +284,6 @@
 
     <!-- Bootstrap core JavaScript-->
     <script src="../../../vendor/jquery/jquery.min.js"></script>
-    <script src="../../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
     <script src="../../../vendor/jquery-easing/jquery.easing.min.js"></script>
@@ -294,21 +293,33 @@
 
     <!-- Page level plugins -->
     <script src="../../../vendor/chart.js/Chart.min.js"></script>
+    <script src="../../../vendor/chart.js/Chart.bundle.min.js"></script>
+
+    <?php
+    $completion = $dashboard->getCompletion($carid);
+    $incomplete = $dashboard->getGameLevel() - $dashboard->getCompletion($carid);
+    $wins = $dashboard->getWins($carid);
+    $losses= $dashboard->getLosses($carid);
+    $easy = $dashboard->getEasy($carid);
+    $medium= $dashboard->getMedium($carid);
+    $difficult = $dashboard->getDifficult($carid);
+    ?>
+
+    <script type="text/javascript">
+        var completion = "<?= $completion ?>";
+        var incomplete = "<?= $incomplete ?>";
+        var wins = "<?= $wins ?>";
+        var losses = "<?= $losses ?>";
+        var easy = "<?= $easy ?>";
+        var medium = "<?= $medium ?>";
+        var difficult = "<?= $difficult ?>";
+    </script>
 
     <!-- Page level custom scripts -->
     <script src="../../../js/demo/chart-area-demo.js"></script>
     <script src="../../../js/demo/chart-pie-demo.js"></script>
     <script src="../../../js/demo/chart-bar-demo.js"></script>
 
-    <script type="text/javascript">
-        var completion = <?php json_encode($dashboard->getCompletion($carid));?>;
-        var incomplete = <?php json_encode($dashboard->getGameLevel() - $dashboard->getCompletion($carid));?>;
-        var wins = <?php json_encode($dashboard->getWins($carid));?>;
-        var losses = <?php json_encode($dashboard->getLosses($carid));?>;
-        var easy = <?php json_encode($dashboard->getEasy($carid));?>;
-        var medium = <?php json_encode($dashboard->getMedium($carid));?>;
-        var difficult = <?php json_encode($dashboard->getDifficult($carid));?>;
-    </script>
 </body>
 
 </html>
