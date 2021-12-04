@@ -14,10 +14,9 @@ class dashboard extends databaseCon {
         return $car;
     }
     public function gamedbconnection($carid) {
-        $sql = "SELECT TOP 1 * FROM game WHERE car_id = " . $carid;
+        $sql = "SELECT * FROM game WHERE car_id = " . $carid . " ";
         $stmt = $this->connect()->prepare($sql);
-        $stmt->execute();
-        $car = $stmt->get_result();
+        $car = $stmt->execute();
         return $car;
     }
     public function getSpeed($carid) {
@@ -50,30 +49,36 @@ class dashboard extends databaseCon {
     }
     public function getWins($carid) {
         $car = $this->gamedbconnection($carid);
-        return $car['wins'];
+        $row = $car->fetchArray(SQLITE3_ASSOC);
+        return $row['wins'];
     }
     public function getLosses($carid) {
         $car = $this->gamedbconnection($carid);
-        return $car['losses'];
+        $row = $car->fetchArray(SQLITE3_ASSOC);
+        return $row['losses'];
     }
     function getGameLevel() {
         return $this->gameLevel;
     }
     public function getCompletion($carid) {
         $car = $this->gamedbconnection($carid);
-        return $car['completion'];
+        $row = $car->fetchArray(SQLITE3_ASSOC);
+        return $row['completion'];
     }
     public function getEasy($carid) {
         $car = $this->gamedbconnection($carid);
-        return $car['easy'];
+        $row = $car->fetchArray(SQLITE3_ASSOC);
+        return $row['easy'];
     }
     public function getMedium($carid) {
         $car = $this->gamedbconnection($carid);
-        return $car['medium'];
+        $row = $car->fetchArray(SQLITE3_ASSOC);
+        return $row['medium'];
     }
     public function getDifficult($carid) {
         $car = $this->gamedbconnection($carid);
-        return $car['difficult'];
+        $row = $car->fetchArray(SQLITE3_ASSOC);
+        return $row['difficult'];
     }
 
     /*public function getConnection($carid) {
