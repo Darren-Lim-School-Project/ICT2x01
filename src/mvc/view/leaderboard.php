@@ -1,18 +1,24 @@
-<?php
-include '../../processors/session.process.php';
-?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 
 <?php
-include '../controller/leaderboardController.php';
+include '../model/databaseCon.php';
 include '../../../includes/head.php';
 ?>
 
 <title>IR-Acer - Leaderboard</title>
 
+<!-- Custom fonts for this template-->
+<link href="../../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet"
+      type="text/css">
+<link
+	href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+	rel="stylesheet">
+
+<!-- Custom styles for this template-->
+<link href="../../../css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
 
@@ -23,6 +29,7 @@ include '../../../includes/head.php';
 
 <?php
 include '../../../includes/sidebar.php';
+include '../model/getscore.php';
 ?>
 
         <!-- Content Wrapper -->
@@ -41,54 +48,59 @@ include '../../../includes/sidebar.php';
 				<div class="container-fluid">
 
 					<!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Leaderboard</h1>
+                    <h1 class="h3 mb-2 text-gray-800">LeaderBoard</h1>
+                    <p class="mb-4">The Top Users of IR-Acer.</p>
+
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Game Scores List</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">LeaderBoard Charts</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
-                                    <tr>
-                                        <th>Score</th>
-                                        <th>Ranking</th>
-                                        <th>UserName</th>
-                                        <th>Car Code</th>
-                                        <th>Difficulty</th>
+                                        <tr>
 
-                                    </tr>
+                                            <th>UserName</th>
+                                            <th>Score</th>
+                                            <th>CarID</th>
+                                            <th>Difficulty</th>
+                                        </tr>
+                                    <?php
+                                    $data = new databaseCon();
+                                    $ranking = $data->updatescore(1);
+                                    $username = $data->updatescore(2);
+                                    $score = $data->updatescore(3);
+                                    $carid = $data->updatescore(4);
+                                    $diff = $data->updatescore(5);
+                                    //sort($diff)
+
+                                    ?>
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>Score</th>
-                                            <th>Ranking</th>
-                                            <th>UserName</th>
-                                            <th>Car Code</th>
-                                            <th>Difficulty</th>
 
+                                            <th>UserName</th>
+                                            <th>Score</th>
+                                            <th>CarID</th>
+                                            <th>Difficulty</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
                                     <?php
-                                    $data = new leaderboardController();
-                                    $ranking = $data->getTableData(1);
-                                    $username = $data->getTableData(2);
-                                    $score = $data->getTableData(3);
-                                    $carIdScore = $data->getTableData(4);
-                                    $difficulty = $data->getTableData(5);
                                     foreach ($ranking as $index => $rankingum) :
                                     ?>
-                                    <tr>
+                                        <tr>
+                                            
+                                            <td><?php echo $username[$index] ?></td>
+                                            <td><?php echo $score[$index] ?></td>
+                                            <td><?php echo $carid[$index] ?></td>
+                                            <td><?php echo $diff[$index] ?></td>
 
-                                        <td><?php echo $score[$index] ?></td>
-                                        <td> <?php echo $rankingum ?></td>
-                                        <td><?php echo $username[$index] ?></td>
-                                        <td><?php echo $carIdScore[$index] ?></td>
-                                        <td><?php echo $difficulty[$index] ?></td>
-                                        <?php endforeach; ?>
-                                    </tr>
+                                            <?php endforeach; ?>
+                                        </tr>
+
                                     </tbody>
                                 </table>
                             </div>
