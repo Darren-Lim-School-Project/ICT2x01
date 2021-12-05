@@ -3,7 +3,7 @@ ICT2x01-p4-9 Software Engineering Repository
 
 # Whitebox Testing.
 
-The team used **WhitelistController** class for the Whitebox Testing Section of Milestone 3. The **WhitelistController** class is used to handle the interaction between the **WhitelistClass**, **DatabaseCon** Class, **Users** and **Administrators** using the Web Application.
+The team used **WhitelistController** class for the Whitebox Testing Section of Milestone 3. The **WhitelistController** class is used to handle the interaction between the **WhitelistClass**, **DatabaseCon** Class, **Users** and **Administrators** using the Web Application. Its main purpose is to check if a car is whitelisted and handling the adding or removal of cars from the whitelist.
 
 
 
@@ -20,15 +20,25 @@ public function getTableData($mode);
 private function isEmptyInput();
 
 ```
+## Path Coverage
+We have decided to use Path Coverage for our testing as it is considered to be the most comprehensive and robust way to eliminate possible bugs or glitches in our Web Application. Since our Web Application will be used by students, we have to ensure that a comprehensive test is conducted so that the students will enjoy using our web application with a friendly user interface and limited bugs. To complement the path coverage approach, we have also used the Basis Path Testing method to ensure that we have sufficient coverage to uncover most bugs that will affect our system. This method makes use of the Cyclomatic Complexity to come up with the tests cases below.
+
+```python
+Cyclomatic Complexity Formula:
+V(G) = edges(e) + nodes(n) + (2 * Connected components[p])
+or
+V(G) = e - n + 2(p)
+```
+
 ## Control Flow Graphs
 
-The CFGs for each function were created before coming up with the test cases / test suite.
+The CFGs for each function were created and the cyclomatic complexity were calculated before coming up with the test cases / test suite to ensure sufficient coverage in our testing.
 
 ![CFGWhitelistController](https://user-images.githubusercontent.com/28041652/144755133-a9b6be20-2a27-4c72-a679-8dd57584d85d.png)
 
 
 ## Test Cases:
-The following tests were used in the test suite for testing **WhitelistController** and can be found in the "***WhiteboxTesting***" branch and is located at ***"tests/WhitelistTest.php"*** 
+After calculating the Cyclomatic Complexity, the following tests were used in the test suite for testing **WhitelistController**. The test suite can be found in the "***WhiteboxTesting***" branch and is located at ***"tests/WhitelistTest.php"*** 
 
 ```php
 <?php
@@ -118,17 +128,29 @@ class WhitelistTest extends \PHPUnit\Framework\TestCase {
 
 ```
 
-## Test Case Results:
+## Test Case Execution:
 
-The Test Case Results of the above test suite were all successful.
+ After numerous refractoring and testing to ensure that the functions behave as intended, the test cases were all succesful.
+ 
+### How Testing Was Executed [Demo]:
 
 ![testcases (1)](https://user-images.githubusercontent.com/28041652/144755986-0e851a6f-e505-4d3c-a2f6-a025e428559a.gif)
 
-## Code Coverage Results:
+### Test Suite Result:
 
-The Code Coverage statistics displayed a coverage of 100% of all of the codes in the class when running the test suite. 
+![UnitTest](https://user-images.githubusercontent.com/28041652/144755534-6640dd6d-1284-43a0-93e5-0b223d45a8c7.png)
+
+## Code Coverage Execution:
+
+The Code Coverage statistics displayed a coverage of 100% of all of the codes in the class when running the complete test suite. 
+
+### How Code Coverage Was Executed [Demo]
 
 ![codecoverage](https://user-images.githubusercontent.com/28041652/144756010-b36bb255-e54e-40d4-9659-b73e5bd5846e.gif)
+
+## Code Coverage Statistics:
+
+![CoverageStats](https://user-images.githubusercontent.com/28041652/144756075-20a4b665-3315-4682-8e6e-52dd7ed2d2e6.png)
 
 The test results were generated using PHPUnit. 
 
@@ -136,7 +158,9 @@ The test results were generated using PHPUnit.
 
 
 
-The test suite and code coverage statistics were run and generated using an automated testing framework lib for PHP called **PHPUnit**. **PHPUnit** requires **Composer** to be installed and uses **XDebug** to run an automated code coverage check. 
+The test suite and code coverage statistics were run and generated using an automated testing framework library for PHP called **PHPUnit**. **PHPUnit** requires **Composer**, a tool for dependency management in PHP, to be installed and uses **XDebug**, a php extension that provides debugging options,  to run an automated code coverage check. 
+
+The team decided to use this framework as it is well known for its accuracy and easy implementation into projects. Despite being known for its accuracy, the team also double checked by manually calculating the code coverages. Since the results are the same, we confirmed that PHPUnit should be used for our code coverages and our testing.
 
 Follow the steps below on how to set-up **PHPUnit**, **Composer** and **XDebug** to run the Test Suite and Code Coverage. 
 
@@ -150,7 +174,7 @@ Follow the steps below on how to set-up **PHPUnit**, **Composer** and **XDebug**
 ```javascript
 composer require phpunit/phpunit ^9
 ```
-2. To check if PHPUnit is properly installed, run the following and observer if there is an output. ***(Ensure your directory is at the root of your source codes)***:
+2. To check if PHPUnit is properly installed, run the following and observe if there is an output. ***(Run command prompt or cd (change directory) of your command prompt to the same directory as your source codes)***:
 ```javascript
 ./vendor/bin/phpunit --version
 ```
@@ -176,11 +200,11 @@ composer require phpunit/phpunit ^9
 </phpunit>
 ```
 4. To run the test suite, run the following command:
-* Note that PHPUnit detects test suites that are stored in the tests directory. 
+* Note that PHPUnit automatically detects test suites that are stored in the **/tests** directory. 
 ```php
 ./vendor/bin/phpunit --testdox
 ```
-If you see the following output, you have successfully ran the test suite !
+If you see the following outputs, you have successfully ran the test suite !
 
 Example of a successful Unit Test:
 
@@ -195,7 +219,7 @@ Example of a failed Unit Test:
 ### Installation and Run:
 >Xdebug:
 
-1. After installing PHPUnit and Composer, Xdebug is required to run the code coverage command using PHPUnit. In the terminal/command prompt (In your source code root directory), run the following:
+1. After installing PHPUnit and Composer, Xdebug is required to run the code coverage command using PHPUnit. In the terminal/command prompt ***(Run command prompt or cd (change directory) of your command prompt to the same directory as your source codes)***, run the following:
 ```
 composer require phpunit/php-code-coverage
 ```
@@ -221,6 +245,7 @@ After running whitelistController.php.html:
     
 ![Code Coverage Resutls](https://user-images.githubusercontent.com/28041652/144755518-77e9655c-94e4-4758-841d-12e81124b898.png)
 
+----------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
