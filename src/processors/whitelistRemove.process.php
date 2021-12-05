@@ -9,9 +9,13 @@ if(isset($_POST["removecar"])) {
     // Instantiate Class
     include "../mvc/controller/whitelistController.php";
     $removeCar = new whitelistController($carId);
-
+    $result = $removeCar->removeCar();
     // Running error Handlers and Removal of Car
-    if($removeCar->removeCar() == true){
+    if($result == "noEntry"){
+        header("location: ../mvc/view/whitelistRemove.php?result=noEntry");
+    } else if($result == "emptyInput"){
+        header("location: ../mvc/view/whitelistRemove.php?error=emptyinput");
+    }else if($result == "true"){
         header("location: ../mvc/view/whitelistRemove.php?result=success");
     }
     else
