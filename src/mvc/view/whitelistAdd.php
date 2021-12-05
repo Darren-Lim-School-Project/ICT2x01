@@ -101,10 +101,6 @@ include '../../processors/sessionsec.process.php';
                                         <br>
                                         <button class="btn btn-primary btn-user btn-block" name=addcar type="submit">Add</button>
                                     </form>
-                                    <br>
-                                    <div class="text-center">
-                                        <a class="small" href="whitelistSettings.php">Go Back</a>
-                                    </div>
                                     <hr>
                                 </div>
                             </div>
@@ -119,11 +115,7 @@ include '../../processors/sessionsec.process.php';
         ?>
     </div>
 </div>
-<script>
-    function goBack() {
-        window.history.back();
-    }
-</script>
+
 <?php
 include '../../../includes/javascriptSrc.php'
 ?>

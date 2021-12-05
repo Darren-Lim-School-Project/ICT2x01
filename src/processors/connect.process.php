@@ -11,16 +11,13 @@ if (isset($_POST["connect"])) {
     $connect = new whitelistController($carId);
 
     // Running error Handlers and Adding of Car
-    if($connect->checkEntry() == "true"){
+    if($connect->checkWhitelisted() == true){
         /* Run Connect Car Script
         if true navigate to play game / Index. Else deny
         */
         session_start();
         $_SESSION['carId'] = $carId;
         header("location: ../mvc/view/index.php");
-    } else if ($connect->checkEntry() == "emptyInput"){
-        header("location: ../mvc/view/connect.php?result=emptyInput");
-        die();
     }
     else
     {

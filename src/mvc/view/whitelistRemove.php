@@ -101,12 +101,7 @@ include '../../processors/sessionsec.process.php';
                                         <br>
 
                                         <button class="btn btn-primary btn-user btn-block" name=removecar type="submit">Remove</button>
-
                                     </form>
-                                    <br>
-                                    <div class="text-center">
-                                        <a class="small" href="whitelistSettings.php">Go Back</a>
-                                    </div>
                                     <hr>
                                 </div>
                             </div>
@@ -121,11 +116,7 @@ include '../../processors/sessionsec.process.php';
         ?>
     </div>
 </div>
-<script type="text/javascript">
-    document.getElementById("goBack").onclick = function () {
-        location.href = "whitelistSettings.php";
-    };
-</script>
+
 <?php
 include '../../../includes/javascriptSrc.php'
 ?>
