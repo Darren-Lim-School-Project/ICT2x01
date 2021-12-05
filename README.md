@@ -120,17 +120,15 @@ class WhitelistTest extends \PHPUnit\Framework\TestCase {
 
 ## Test Case Results:
 
-The Test Case Results of the above test suite were all successful. A screenshot of the Results are seen below:
+The Test Case Results of the above test suite were all successful.
 
-![UnitTest](https://user-images.githubusercontent.com/28041652/144755079-690ac45f-57cc-4446-9cc5-d89bd52b1b91.png)
+![testcases (1)](https://user-images.githubusercontent.com/28041652/144755986-0e851a6f-e505-4d3c-a2f6-a025e428559a.gif)
 
 ## Code Coverage Results:
 
-The Code Coverage statistics displayed a coverage of 100% of all of the codes in the class. A screenshot of the Code Coverage Results are seen below:
+The Code Coverage statistics displayed a coverage of 100% of all of the codes in the class when running the test suite. 
 
-![coverageGenerate](https://user-images.githubusercontent.com/28041652/144755110-3848de76-4c8f-4761-a930-d3dff96b15e2.png)
-
-![CoverageStats](https://user-images.githubusercontent.com/28041652/144755087-3720e336-2b10-4013-8202-1230b3ff9c54.png)
+![codecoverage](https://user-images.githubusercontent.com/28041652/144756010-b36bb255-e54e-40d4-9659-b73e5bd5846e.gif)
 
 The test results were generated using PHPUnit. 
 
@@ -184,9 +182,16 @@ composer require phpunit/phpunit ^9
 ```
 If you see the following output, you have successfully ran the test suite !
 
-<insert image here>
+Example of a successful Unit Test:
 
-# Code Coverage
+![UnitTest](https://user-images.githubusercontent.com/28041652/144755534-6640dd6d-1284-43a0-93e5-0b223d45a8c7.png)
+
+Example of a failed Unit Test:
+
+![Screenshot 2021-12-06 004953](https://user-images.githubusercontent.com/28041652/144755642-a0cd1a7f-39c8-4a09-b3ce-279e2af7d6ec.png)
+
+
+## Code Coverage
 ### Installation and Run:
 >Xdebug:
 
@@ -208,7 +213,13 @@ xdebug.mode=coverage
 ```
 This will generate several HTML files in coverageStats folder. Run the files to get your coverage results!
 
-<insert image here>
+![Screenshot 2021-12-06 004737](https://user-images.githubusercontent.com/28041652/144755491-45cbecbb-1a37-40f9-9ffe-9c0b077e2fac.png)
+
+After running whitelistController.php.html:
+
+![CoverageStats](https://user-images.githubusercontent.com/28041652/144756075-20a4b665-3315-4682-8e6e-52dd7ed2d2e6.png)
+    
+![Code Coverage Resutls](https://user-images.githubusercontent.com/28041652/144755518-77e9655c-94e4-4758-841d-12e81124b898.png)
 
 
 
