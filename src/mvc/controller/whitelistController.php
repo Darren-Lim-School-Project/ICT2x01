@@ -1,12 +1,14 @@
 <?php
-
 $curPageName = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1);
 if($curPageName == "whitelistView.php") {
     include "../model/whitelistClass.php";
     include "../../interfaces/IDatabase.php";
-} else {
+} else if($curPageName == "whitelistAdd.process.php" || $curPageName == "connect.process.php" || $curPageName == "whitelistRemove.process.php") {
     require_once "../mvc/model/whitelistClass.php";
     include "../interfaces/IDatabase.php";
+} else {
+    require_once "src/mvc/model/whitelistClass.php";
+    include "src/interfaces/IDatabase.php";
 }
 
 class whitelistController extends whitelistClass implements IDatabase {
@@ -17,75 +19,51 @@ class whitelistController extends whitelistClass implements IDatabase {
         $this->carId = $carId;
     }
 
+    /** Check if there is already an entry */
     public function addCar(){
-        /* Check if there is already an entry */
-        if($this->checkEntryForAdding() == true){
-            header("location: ../mvc/view/whitelistAdd.php?result=duplicateEntry");
-            exit();
+        if($this->checkEntry() == "true"){
+            return "duplicateEntry";
         }
         return $this->addCarEntry($this->carId);
     }
 
+    /** Check if there is an entry */
     public function removeCar(){
-        /* Check if there is an entry */
-        if($this->checkEntryForRemoving() == false){
-            header("location: ../mvc/view/whitelistRemove.php?result=noEntry");
-            exit();
+        if($this->checkEntry() == "false"){
+            return "noEntry";
         }
         return $this->removeCarEntry($this->carId);
     }
 
-
-    /* Check Car Entry Functions */
-    public function checkEntryForAdding(){
+    /** Check if there is already a car with the same entry */
+    public function checkEntry(){
         if($this->isEmptyInput() == true){
-            header("location: ../mvc/view/whitelistAdd.php?error=emptyinput");
-            exit();
+            return "emptyInput";
         }
-        /* Check if there is already a car with the same entry */
         $getEntryRes = $this->getStatus($this->carId);
-        if($getEntryRes == true){
-            return true;
+        if($getEntryRes == "true"){
+            return "true";
         }
-        return false;
-
+        return "false";
     }
 
-    public function checkEntryForRemoving(){
-        if($this->isEmptyInput() == true){
-            header("location: ../mvc/view/whitelistRemove.php?error=emptyinput");
-            exit();
-        }
-        /* Check if there is already a car with the same entry */
-        $getEntryRes = $this->getStatus($this->carId);
-        if($getEntryRes == true){
-            return true;
-        }
-        return false;
-
-    }
-
-    public function checkWhitelisted(){
-        if($this->isEmptyInput() == true){
-            header("location: ../mvc/view/connect.php?result=emptyinput");
-            exit();
-        }
-        /* Check if car is whitelisted */
-        return $this->getStatus($this->carId);
-    }
-
-    private function isEmptyInput(): bool
-    {
+    /** Check if input is Empty */
+    private function isEmptyInput(): bool {
         if(empty($this->carId)){
             return true;
         }
         else{
             return false;
         }
-
     }
 
+    /** Get Necessary Data in Array format depending on the Data needed */
     public function getTableData($mode){
-        return $this->getArrayData($mode);
+        if($this->getArrayData($mode) == false){
+            return false;
+        }
+        else {
+            return $this->getArrayData($mode);
+        }
     }
 }

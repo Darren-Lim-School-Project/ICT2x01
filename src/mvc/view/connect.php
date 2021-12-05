@@ -37,7 +37,7 @@ include '../../processors/session.process.php';
                                         <a style="color: #b21d22">Car is not Whitelisted! Check with the Administrator!</a> <br>
                                         <?php
                                     }
-                                    else if($_GET['result'] == "emptyinput"){
+                                    else if($_GET['result'] == "emptyInput"){
                                         ?>
                                         <a style="color: #b21d22">There is no such entry in the Whitelist!</a> <br>
                                         <?php
