@@ -1,0 +1,25 @@
+.challenge_container {
+    position: relative;
+
+    /* IMPORTANT: Make sure the width and height matches your map size. */
+    width: 320px;
+    height: 320px;
+}
+
+.challenge_image {
+    position: relative;
+    width: 320px;
+    height: 320px;
+}
+
+.car_location {
+    position: absolute;
+    width:10%;
+    height:10%;
+
+    /* Starting point is top90left40 */
+    /* Increments of 32 */
+    top: 288px;
+    left: 128px;
+}
+ 
