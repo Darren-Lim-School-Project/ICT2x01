@@ -1,4 +1,5 @@
 <?php
+include '../../processors/session.process.php';
 $difficulty = $_GET['difficulty'];
 
 // Here by default (won't ever be 'hit' cos if not one of the 3, will redirect)
@@ -91,27 +92,27 @@ include '../../../includes/sidebar.php';
 								<div class="card-header pb-0">
 									<h6>Commands</h6>
 								</div>
-								<div class="card-body p-3">
-									<div id="blocklyDiv" style="height: 480px; width: 690px;"></div>
-									<xml id="toolbox-categories" style="display: none"> <!-- Control Category -->
-									<category name="Movement" categorystyle="list_category"> <block
-										type="up"></block> <block type="down"></block> <block type="left"></block> <block
-										type="right"></block> </block> </category> <!-- Loop Category -->
-									<category name="Loops" categorystyle="loop_category"> <block
-										type="controls_repeat_ext"> <value name="TIMES"> <shadow
-										type="math_number"> <field name="NUM">5</field> </shadow> </value>
-									</block> <block type="controls_whileUntil"></block> <block
-										type="controls_for"> <value name="FROM"> <shadow
-										type="math_number"> <field name="NUM">1</field> </shadow> </value>
-									<value name="TO"> <shadow type="math_number"> <field name="NUM">10</field>
-									</shadow> </value> <value name="BY"> <shadow type="math_number">
-									<field name="NUM">1</field> </shadow> </value> </block> <!-- <block type="controls_forEach"></block> -->
-									<block type="controls_flow_statements"></block> </category> </xml>
-									<br>
-									<button type="button" class="btn btn-outline-primary"
-										onclick="showCode()">Send Commands</button>
+                                <div class="card-body p-3">
+                                    <div id="blocklyDiv" style="height: 480px; width: 690px;"></div>
+                                    <xml id="toolbox-categories" style="display: none"> <!-- Control Category -->
+                                        <category name="Movement" categorystyle="list_category"> <block
+                                                    type="up"></block> <block type="down"></block> <block type="left"></block> <block
+                                                    type="right"></block> </block> </category> <!-- Loop Category -->
+                                        <category name="Loops" categorystyle="loop_category"> <block
+                                                    type="controls_repeat_ext"> <value name="TIMES"> <shadow
+                                                            type="math_number"> <field name="NUM">5</field> </shadow> </value>
+                                            </block> <block type="controls_whileUntil"></block> <block
+                                                    type="controls_for"> <value name="FROM"> <shadow
+                                                            type="math_number"> <field name="NUM">1</field> </shadow> </value>
+                                                <value name="TO"> <shadow type="math_number"> <field name="NUM">10</field>
+                                                    </shadow> </value> <value name="BY"> <shadow type="math_number">
+                                                        <field name="NUM">1</field> </shadow> </value> </block> <!-- <block type="controls_forEach"></block> -->
+                                            <block type="controls_flow_statements"></block> </category> </xml>
+                                    <br>
+                                    <button type="button" class="btn btn-outline-primary"
+                                            onclick="showCode()">Send Commands</button>
 
-								</div>
+                                </div>
 							</div>
 						</div>
 					</div>

@@ -37,13 +37,6 @@ include '../../processors/session.process.php';
                                         <input type="password" class="form-control form-control-user"
                                                id="password" name="password" required placeholder="Password" >
                                     </div>
-                                    <div class="form-group">
-                                        <div class="custom-control custom-checkbox small">
-                                            <input type="checkbox" class="custom-control-input" id="rememberMe">
-                                            <label class="custom-control-label" for="rememberMe">Remember
-                                                Me</label>
-                                        </div>
-                                    </div>
                                     <button class="btn btn-primary btn-user btn-block" name="login" type="submit">Login</button>
                                 </form>
                                 <hr>

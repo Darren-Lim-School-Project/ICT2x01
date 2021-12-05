@@ -3,7 +3,7 @@
 if(isset($_POST["login"])) {
 
     // Grabbing the data
-    $username = $_POST["username"];
+    $username = sanitize_input($_POST["username"]);
     $password = $_POST["password"];
 
     // Instantiate Class
@@ -22,4 +22,13 @@ if(isset($_POST["login"])) {
     }
 
 
+} else {
+    header("location: ../mvc/view/index.php");
+}
+
+function sanitize_input($data): string
+{
+    $data = trim($data);
+    $data = stripslashes($data);
+    return htmlspecialchars($data);
 }
