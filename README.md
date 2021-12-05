@@ -24,7 +24,7 @@ private function isEmptyInput();
 
 The CFGs for each function were created before coming up with the test cases / test suite.
 
-<insert image here>
+![CFGWhitelistController](https://user-images.githubusercontent.com/28041652/144755133-a9b6be20-2a27-4c72-a679-8dd57584d85d.png)
 
 
 ## Test Cases:
@@ -119,13 +119,23 @@ class WhitelistTest extends \PHPUnit\Framework\TestCase {
 ```
 
 ## Test Case Results:
-<Insert image>
+
+The Test Case Results of the above test suite were all successful. A screenshot of the Results are seen below:
+
+![UnitTest](https://user-images.githubusercontent.com/28041652/144755079-690ac45f-57cc-4446-9cc5-d89bd52b1b91.png)
 
 ## Code Coverage Results:
-<insert image>
+
+The Code Coverage statistics displayed a coverage of 100% of all of the codes in the class. A screenshot of the Code Coverage Results are seen below:
+
+![coverageGenerate](https://user-images.githubusercontent.com/28041652/144755110-3848de76-4c8f-4761-a930-d3dff96b15e2.png)
+
+![CoverageStats](https://user-images.githubusercontent.com/28041652/144755087-3720e336-2b10-4013-8202-1230b3ff9c54.png)
+
+The test results were generated using PHPUnit. 
 
 ## PHPUnit: Running Test Suite and Code Coverage
-<Insert gif>
+
 
 
 The test suite and code coverage statistics were run and generated using an automated testing framework lib for PHP called **PHPUnit**. **PHPUnit** requires **Composer** to be installed and uses **XDebug** to run an automated code coverage check. 
