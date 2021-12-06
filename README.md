@@ -131,10 +131,6 @@ class WhitelistTest extends \PHPUnit\Framework\TestCase {
 
 ```
 
-### In CFG form:
-
-![InkedCFGWhitelistController222](https://user-images.githubusercontent.com/28041652/144818771-56d0fad8-79a3-4c3e-9d33-639968990720.jpg)
-
 ## Test Case Execution:
 
  After numerous refractoring and testing to ensure that the functions behave as intended, the test cases were all succesful.
@@ -162,6 +158,10 @@ The Code Coverage statistics displayed a coverage of 100% of all of the codes in
 Hovering over the green-highlighted code lines will also show us which test case covered the code:
 
 ![2021-12-06 16-17-37 (1)](https://user-images.githubusercontent.com/28041652/144811743-52871665-911f-437a-9da0-df9dfc3a74cd.gif)
+
+### In CFG form:
+
+![InkedCFGWhitelistController222](https://user-images.githubusercontent.com/28041652/144818771-56d0fad8-79a3-4c3e-9d33-639968990720.jpg)
 
 
 The test results were generated using PHPUnit. 
