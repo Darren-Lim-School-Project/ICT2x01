@@ -4,13 +4,30 @@ ICT2x01-p4-9 Software Engineering Repository
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # How to run
-Before you start anything, do ensure that you had installed PHP and it is running the latest version, v8.0.13.
+Before running the Web Application, ensure that PHP is running the latest version, v8.0.13, on your computer. 
 
-Once you had installed PHP, navigate to the PHP folder and open up ```php.ini``` to make the following configuration:
+You can download PHP [here](https://www.php.net/downloads.php#v8.0.13).
 
-```extension=pdo_sqlite```
+Once PHP is installed, navigate to the PHP folder and edit ```php.ini``` to make the following configurations: 
 
-```extension=sqlite3```
+### Configuration Steps
+
+1. Search for the following and uncomment the lines below by removing the `#`.
+
+**Before**:
+
+```
+#extension=sqlite3
+#extension=pdo_sqlite
+```
+**After Removing the `#`**:
+
+```
+extension=sqlite3
+extension=pdo_sqlite
+```
+
+2. Search for the following and edit the extension directory relative to your own extension path:
 
 ```
 [sqlite3]
@@ -18,10 +35,7 @@ Once you had installed PHP, navigate to the PHP folder and open up ```php.ini```
 ; http://php.net/sqlite3.extension-dir
 sqlite3.extension_dir = INSERT THE DIRECTORY OF YOUR PHP EXT PATH (Example: C:\xampp\php\ext)
 ```
-Also, uncomment ```extension=sqlite3``` in php.ini
 
-## Prerequisite
-PHP: ```https://www.php.net/downloads.php#v8.0.13```
 
 ## Steps to run IRAcer (For Windows)
 1. Clone ```ICT2x01-p4-9```
@@ -35,6 +49,18 @@ PHP: ```https://www.php.net/downloads.php#v8.0.13```
 2. Open Terminal and change the directory to the parent directory of the project folder
 3. Enter ```php -S localhost:8000```
 4. Open web browser and access ```htttp://localhost:8000/src/mvc/view/login.php```
+
+## Credentials and Car Code
+To access the admin features, login with the following credentials:
+```php
+Username: admin
+Password: P@ssw0rd
+```
+
+To access the application with the Car Code. Use the following Whitelisted Car Code:
+```php
+IRAcer0x121
+```
 
 # Development workflow
 
