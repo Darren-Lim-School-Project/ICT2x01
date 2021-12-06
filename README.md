@@ -42,6 +42,13 @@ Best practice: Commit changes regularly
 2. Issues must be tagged to <b><u>at least one</u></b> team member 
 4. Issues <b><u>MUST</u></b> be ```closed``` before it can be merged into main
 
+# UAT
+
+## Updated Use Case Diagram & System State Diagram
+
+## Embedded Video
+https://user-images.githubusercontent.com/10690912/144832846-904d9c8e-1db7-4e31-84cd-9f103aa586b2.mp4
+
 # Whitebox Testing
 
 The team used **WhitelistController** class for the Whitebox Testing Section of Milestone 3. The `WhitelistController` class is used to handle the interaction between the `WhitelistClass`, `DatabaseCon` Class, **Users** and **Administrators** using the Web Application. Its main purpose is to check if a car is whitelisted and handle the adding or removal of cars from the whitelist.
@@ -303,5 +310,7 @@ After running whitelistController.php.html:
 # Personal Reflections
 
 The team's personal reflection can be found in the `reflections` folder from the root directory.
+
+
 
 
