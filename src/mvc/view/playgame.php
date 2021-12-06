@@ -65,6 +65,11 @@ include '../../../includes/sidebar.php';
 								class="text">Medium</span>
 							</a> <a href="challenges.php?difficulty=hard" class="btn btn-danger btn-icon-split"> <span
 								class="text">Hard</span>
+							</a> 
+							<br>
+							<br>
+							<a href="movement.php" class="btn btn-secondary btn-icon-split"> <span
+								class="text">Custom</span>
 							</a>
 
 						</div>
