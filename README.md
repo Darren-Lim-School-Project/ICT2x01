@@ -3,6 +3,38 @@ ICT2x01-p4-9 Software Engineering Repository
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+# How to run
+Before you start anything, do ensure that you had installed PHP and it is running the latest version, v8.0.13.
+
+Once you had installed PHP, navigate to the PHP folder and open up ```php.ini``` to make the following configuration:
+
+```extension=pdo_sqlite```
+
+```extension=sqlite3```
+
+```
+[sqlite3]
+; Directory pointing to SQLite3 extensions
+; http://php.net/sqlite3.extension-dir
+sqlite3.extension_dir = INSERT THE DIRECTORY OF YOUR PHP EXT PATH (Example: C:\xampp\php\ext)
+```
+
+## Prerequisite
+PHP: ```https://www.php.net/downloads.php#v8.0.13```
+
+## Steps to run IRAcer (For Windows)
+1. Clone ```ICT2x01-p4-9```
+2. Go to the parent directory of the project folder
+3. Shift + Right Click and select ```Open Powershell Windows Here```
+4. Enter ```php -S localhost:8000``` at Powershell Windows
+5. Open web browser and access ```htttp://localhost:8000/src/mvc/view/login.php```
+
+## Steps to run IRAcer (For Mac)
+1. Clone ```ICT2x01-p4-9```
+2. Open Terminal and change the directory to the parent directory of the project folder
+3. Enter ```php -S localhost:8000```
+4. Open web browser and access ```htttp://localhost:8000/src/mvc/view/login.php```
+
 # Development workflow
 
 The team utilised various Git/Github features throughout the course of this SE project. Each member has their own development branch for pushing updates to and when those updates are validated and tested, it will be merged with ```main```. The development branches run along side the ```main``` branch and provides the team the most updated development changes.
