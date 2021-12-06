@@ -4,12 +4,12 @@ if($curPageName == "leaderboard.php") {
     include "../model/leaderboardClass.php";
     include "../../interfaces/IDatabase.php";
 } else {
-    require_once "../mvc/model/leadrboardClass.php";
+    require_once "../mvc/model/leaderboardClass.php";
     include "../interfaces/IDatabase.php";
 }
 class leaderboardController extends leaderboardClass implements IDatabase
 {
-
+    
     public function getTableData($mode)
     {
         return $this->getArrayData($mode);

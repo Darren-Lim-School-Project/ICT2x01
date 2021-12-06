@@ -10,7 +10,7 @@ include '../../processors/session.process.php';
 include '../../../includes/head.php';
 ?>
 
-<title>IR-Acer - Leaderboard</title>
+<title>IR-Acer - Custom</title>
 
 <!-- Custom fonts for this template-->
 <link href="../../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet"
