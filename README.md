@@ -18,6 +18,7 @@ Once you had installed PHP, navigate to the PHP folder and open up ```php.ini```
 ; http://php.net/sqlite3.extension-dir
 sqlite3.extension_dir = INSERT THE DIRECTORY OF YOUR PHP EXT PATH (Example: C:\xampp\php\ext)
 ```
+Also, uncomment ```extension=sqlite3``` in php.ini
 
 ## Prerequisite
 PHP: ```https://www.php.net/downloads.php#v8.0.13```
