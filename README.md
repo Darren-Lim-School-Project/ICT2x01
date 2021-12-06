@@ -77,6 +77,10 @@ Best practice: Commit changes regularly
 
 # UAT
 
+## Design Architecture Pattern Rework
+
+The team decided to rework the architecture of the web application from `layered architecture` to `Model-View-Controller` Architecture Pattern. This is due to the software application requiring flexible incorporation of human-computer interfaces. For example, using `MVC` allows us to have views for the web application where users of the application can use to call the different classes and processes that the model and controller class encapsulates. The views in this case are the `html` pages that does no business logic. There were also popular `MVC` guides and tutorials that allowed the team to apply Object-Oriented concepts and implement classes into our web application as compared to the proposed design in `Milestone 2`. After completing the web application and `Milestone 3`, the team concluded that choosing `MVC` was the right choice. 
+
 ## Updated Use Case Diagram & System State Diagram
 ### System State Diagram
 Generally, the SSD remains the same, with the transition from one state to the other being the same. Only the transtion from Car Connected Console to Leaderboards has changed and the View Car Whitelisted state has been newly added, as highlighted below. The event[conditions]/actions has also been changed to match the functions used in the implementation.
