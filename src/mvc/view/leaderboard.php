@@ -53,7 +53,7 @@ include '../../../includes/sidebar.php';
                                     <thead>
                                     <tr>
                                         <th>Score</th>
-                                        <th>Ranking</th>
+
                                         <th>UserName</th>
                                         <th>Car Code</th>
                                         <th>Difficulty</th>
@@ -63,7 +63,7 @@ include '../../../includes/sidebar.php';
                                     <tfoot>
                                         <tr>
                                             <th>Score</th>
-                                            <th>Ranking</th>
+
                                             <th>UserName</th>
                                             <th>Car Code</th>
                                             <th>Difficulty</th>
@@ -83,7 +83,7 @@ include '../../../includes/sidebar.php';
                                     <tr>
 
                                         <td><?php echo $score[$index] ?></td>
-                                        <td> <?php echo $rankingum ?></td>
+
                                         <td><?php echo $username[$index] ?></td>
                                         <td><?php echo $carIdScore[$index] ?></td>
                                         <td><?php echo $difficulty[$index] ?></td>

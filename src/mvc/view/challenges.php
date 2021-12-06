@@ -1,17 +1,32 @@
 <?php
 include '../../processors/session.process.php';
+$carid = $_SESSION['carId'];
+
 $difficulty = $_GET['difficulty'];
-
+if (isset($_GET['img'])) {
+    $img = $_GET['img'];
+}
 // Here by default (won't ever be 'hit' cos if not one of the 3, will redirect)
-$dir_path = '../../../assets/img/challenges/easy';
+$dir_path = '../../../assets/img/challenges/easy/';
 
-if ($difficulty == 'easy') {
+if ($difficulty == 'easy')
+{
     $dir_path = '../../../assets/img/challenges/easy';
-} elseif ($difficulty == 'medium') {
+}
+elseif ($difficulty == 'medium')
+{
     $dir_path = '../../../assets/img/challenges/medium';
-} elseif ($difficulty == 'hard') {
+}
+elseif ($difficulty == 'hard')
+{
     $dir_path = '../../../assets/img/challenges/hard';
-} else {
+}
+elseif ($difficulty == 'custom' && !empty($img))
+{
+    $dir_path = '../../../assets/img/challenges/custom';
+}
+else
+{
     header("Location: playgame.php");
     exit();
 }
@@ -33,7 +48,8 @@ include '../../../includes/head.php';
 
 </head>
 
-<body id="page-top" onload="start()">
+<!--<body id="page-top" onload="start()">-->
+<body id="page-top">
 
 	<!-- Page Wrapper -->
 	<div id="wrapper">
@@ -50,8 +66,8 @@ include '../../../includes/sidebar.php';
 
 				<!-- navbar -->
                 <?php
-                include '../../../includes/nav.php';
-                ?>
+include '../../../includes/nav.php';
+?>
                 <!-- End of navbar -->
 
 				<div class="container-fluid py-4">
@@ -76,7 +92,13 @@ include '../../../includes/sidebar.php';
 								<div class="challenge_container">
 								
 								
-									<?php getRandomImage($dir_path); ?>
+									<?php 
+									if ($difficulty === "custom") {
+									    echo '<img src="' . $dir_path . "/" . $img . '" alt="' . $img . '" class="img-fluid border-radius-lg challenge_image">';
+									} else {
+									getRandomImage($dir_path);
+									}
+									?>
 								<!--  <img id="carfront" style="display: none;" src='../assets/img/car_images/car_challenge.png'></img> -->
 										<img " class="img-fluid border-radius-lg car_location" src='../../../assets/img/car_images/car_challenge.png'></img>
 										<!-- 									<img src="../assets/img/ChallengeDesign.png" -->
@@ -90,29 +112,29 @@ include '../../../includes/sidebar.php';
 						<div class="col-lg-8">
 							<div class="card h-100">
 								<div class="card-header pb-0">
-									<h6>Commands</h6>
+									<h6>Commands | Moves Left: <span id="capacity"></span></h6>
 								</div>
-                                <div class="card-body p-3">
-                                    <div id="blocklyDiv" style="height: 480px; width: 690px;"></div>
-                                    <xml id="toolbox-categories" style="display: none"> <!-- Control Category -->
-                                        <category name="Movement" categorystyle="list_category"> <block
-                                                    type="up"></block> <block type="down"></block> <block type="left"></block> <block
-                                                    type="right"></block> </block> </category> <!-- Loop Category -->
-                                        <category name="Loops" categorystyle="loop_category"> <block
-                                                    type="controls_repeat_ext"> <value name="TIMES"> <shadow
-                                                            type="math_number"> <field name="NUM">5</field> </shadow> </value>
-                                            </block> <block type="controls_whileUntil"></block> <block
-                                                    type="controls_for"> <value name="FROM"> <shadow
-                                                            type="math_number"> <field name="NUM">1</field> </shadow> </value>
-                                                <value name="TO"> <shadow type="math_number"> <field name="NUM">10</field>
-                                                    </shadow> </value> <value name="BY"> <shadow type="math_number">
-                                                        <field name="NUM">1</field> </shadow> </value> </block> <!-- <block type="controls_forEach"></block> -->
-                                            <block type="controls_flow_statements"></block> </category> </xml>
-                                    <br>
-                                    <button type="button" class="btn btn-outline-primary"
-                                            onclick="showCode()">Send Commands</button>
+								<div class="card-body p-3">
+									<div id="blocklyDiv" style="height: 480px; width: 690px;"></div>
+									<xml id="toolbox-categories" style="display: none"> <!-- Control Category -->
+									<category name="Movement" categorystyle="list_category"> <block
+										type="up"></block> <block type="down"></block> <block type="left"></block> <block
+										type="right"></block> </block> </category> <!-- Loop Category -->
+									<category name="Loops" categorystyle="loop_category"> <block
+										type="controls_repeat_ext"> <value name="TIMES"> <shadow
+										type="math_number"> <field name="NUM">5</field> </shadow> </value>
+									</block> <block type="controls_whileUntil"></block> <block
+										type="controls_for"> <value name="FROM"> <shadow
+										type="math_number"> <field name="NUM">1</field> </shadow> </value>
+									<value name="TO"> <shadow type="math_number"> <field name="NUM">10</field>
+									</shadow> </value> <value name="BY"> <shadow type="math_number">
+									<field name="NUM">1</field> </shadow> </value> </block> <!-- <block type="controls_forEach"></block> -->
+									<block type="controls_flow_statements"></block> </category> </xml>
+									<br>
+									<button type="button" class="btn btn-outline-primary"
+										onclick="showCode()">Send Commands</button>
 
-                                </div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -122,8 +144,8 @@ include '../../../includes/sidebar.php';
 
 				<!-- Footer -->
 				<?php
-    include '../../../includes/footer.php';
-    ?>
+include '../../../includes/footer.php';
+?>
 				<!-- End of Footer -->
 
 			</div>
@@ -169,35 +191,62 @@ include '../../../includes/sidebar.php';
               var code = "moveRight()\n";
               return code;
             };
+            
+            function start() {
+				// Create main workspace.
+				workspace = Blockly.inject('blocklyDiv',
+					{media: 'https://unpkg.com/blockly/media/',
+					toolbox: document.getElementById('toolbox-categories'),
+					maxBlocks: maxBlocksAvailable,
+				});
+			}
+            
+            // this is for the max-available-blocks-left indicator
+            function onchange(event) {
+      			document.getElementById('capacity').textContent =
+          			workspace.remainingCapacity();
+    		}
+
+    		workspace.addChangeListener(onchange);
+    		onchange();
+
+            <?php
+                echo "var difficulty = '$difficulty';";
+                echo "var carid = '$carid';";
+            ?>
+
 		</script>
 
-		<!-- 		This script will overlay a car on the challenge image for movement -->
-		<script>
-			
-			
-		</script>
 
 <?php
-
 function getRandomImage($dir_path = NULL)
 {
 
     // echo "param => " . $dir_path;
-    if (! empty($dir_path)) {
+    if (!empty($dir_path))
+    {
         $files = scandir($dir_path);
         $count = count($files);
-        if ($count > 2) {
+        if ($count > 2)
+        {
             $index = rand(2, ($count - 1));
             $filename = $files[$index];
-            if (strpos($filename, 'jpeg') !== false) {
+            if (strpos($filename, 'jpeg') !== false)
+            {
                 echo '<img src="' . $dir_path . "/" . $filename . '" alt="' . $filename . '" class="img-fluid border-radius-lg challenge_image">';
-            } else {
+            }
+            else
+            {
                 getRandomImage($dir_path);
             }
-        } else {
+        }
+        else
+        {
             return "The directory is empty!";
         }
-    } else {
+    }
+    else
+    {
         return "Please enter valid path to image directory!";
     }
 }

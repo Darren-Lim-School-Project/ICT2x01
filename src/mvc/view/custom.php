@@ -10,7 +10,7 @@ include '../../processors/session.process.php';
 include '../../../includes/head.php';
 ?>
 
-<title>IR-Acer - Play Game</title>
+<title>IR-Acer - Leaderboard</title>
 
 <!-- Custom fonts for this template-->
 <link href="../../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet"
@@ -20,7 +20,7 @@ include '../../../includes/head.php';
 	rel="stylesheet">
 
 <!-- Custom styles for this template-->
-<link href="../../../css/sb-admin-2.min.css" rel="stylesheet">
+<link href="css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
 
@@ -39,44 +39,64 @@ include '../../../includes/sidebar.php';
 			<!-- Main Content -->
 			<div id="content">
 
-				<!-- navbar -->
+                <!-- navbar -->
                 <?php
                 include '../../../includes/nav.php';
                 ?>
                 <!-- End of navbar -->
 
-				<!-- Begin Page Content -->
-				<div class="container-fluid">
+				<div class="container-fluid py-4">
 
 					<!-- Page Heading -->
-					<h1 class="h3 mb-4 text-gray-800">Play Game!</h1>
+					<h1 class="h3 mb-4 text-gray-800">Challenges</h1>
 
-					<!-- Basic Card Example -->
-					<div class="card shadow mb-4">
-						<div class="card-header py-3">
-							<h6 class="m-0 font-weight-bold text-primary">Select your
-								Difficulty!</h6>
+					<div class="row my-4">
+
+						<!-- Container for map design -->
+						<div class="col-lg-4">
+							<div class="card h-100">
+								<div class="card-header py-3">
+									<h6 class="m-0 font-weight-bold text-primary">How to upload custom challenges</h6>
+								</div>
+								<div class="card-body p-3">
+								
+								<ol>
+									<li> Head to <a href="https://craftdesignonline.com/pattern-grid/">https://craftdesignonline.com/pattern-grid/</a></li>
+									<li> Zoom in until its a 10x10 grid using the magnifying glass</li>
+									<li> Draw a path from start to end</li>
+										<ul>
+											<li>Start: grid (4,1)</li>
+											<li>End: grid (4,10)</li>
+										</ul>
+									<li> Take a screenshot of the challenge that you have created (should be a square image)</li>
+									<li> Upload the .png or .jpg image</li>
+									<li> Click upload</li>
+									<li> Have fun!</li>
+								</ol>
+
+								</div>
+							</div>
 						</div>
-						<div class="card-body">
 
-							<a href="./challenges.php?difficulty=easy" class="btn btn-success btn-icon-split"> <span
-								class="text">Easy</span>
-							</a> <a href="./challenges.php?difficulty=medium" class="btn btn-primary btn-icon-split"> <span
-								class="text">Medium</span>
-							</a> <a href="./challenges.php?difficulty=hard" class="btn btn-danger btn-icon-split"> <span
-								class="text">Hard</span>
-							</a> <a href="./custom.php" class="btn btn-warning btn-icon-split"> <span
-								class="text">Custom</span>
-							</a>
+						<div class="col-lg-8">
+							<div class="card h-100">
+								<div class="card-header py-3">
+									<h6 class="m-0 font-weight-bold text-primary">Upload challenges here!</h6>
+								</div>
+								<div class="card-body p-3">
+									
+                                    <form action="upload.php" method="post" enctype="multipart/form-data">
+                                    	<input type="file" name="the_file" id="fileToUpload">
+                                    	<input type="submit" name="submit" value="Upload!">
+                                    </form>
 
+								</div>
+							</div>
 						</div>
 					</div>
 
 				</div>
-				<!-- /.container-fluid -->
-
-			</div>
-			<!-- End of Main Content -->
+				<!-- End of Main Content -->
 
 			<!-- Footer -->
 <?php
@@ -119,11 +139,11 @@ include '../../../includes/footer.php';
 	</div>
 
 	<!-- Bootstrap core JavaScript-->
-	<script src="vendor/jquery/jquery.min.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="../../../vendor/jquery/jquery.min.js"></script>
+	<script src="../../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 	<!-- Core plugin JavaScript-->
-	<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+	<script src="../../../vendor/jquery-easing/jquery.easing.min.js"></script>
 
 	<!-- Custom scripts for all pages-->
 	<script src="js/sb-admin-2.min.js"></script>
