@@ -145,7 +145,7 @@ class WhitelistTest extends \PHPUnit\Framework\TestCase {
 
 ## Code Coverage Execution:
 
-The Code Coverage statistics displayed a coverage of 100% of all of the codes in the class when running the complete test suite. 
+The Code Coverage statistics displayed a coverage of 100% of all of the codes in the class when running the complete test suite. The coverage test results were generated using `PHPUnit`.  
 
 ### How Code Coverage Was Executed [Demo]
 
@@ -164,11 +164,9 @@ Hovering over the green-highlighted code lines will also show us which test case
 ![InkedCFGWhitelistController222](https://user-images.githubusercontent.com/28041652/144818771-56d0fad8-79a3-4c3e-9d33-639968990720.jpg)
 
 
-The test results were generated using PHPUnit. 
+
 
 ## PHPUnit: Running Test Suite and Code Coverage
-
-
 
 The test suite and code coverage statistics were run and generated using an automated testing framework library for PHP called **PHPUnit**. **PHPUnit** requires **Composer**, a tool for dependency management in PHP, to be installed and uses **XDebug**, a php extension that provides debugging options,  to run an automated code coverage check. 
 
