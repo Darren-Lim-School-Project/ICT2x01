@@ -44,7 +44,7 @@ The CFGs for each function were created and the cyclomatic complexity were calcu
 
 
 ## Test Cases:
-After calculating the Cyclomatic Complexity, the following tests were used in the test suite for testing **WhitelistController**. The test suite can be found in the "***WhiteboxTesting***" branch and is located at ***"tests/WhitelistTest.php"*** 
+After calculating the Cyclomatic Complexity, the following tests were used in the test suite for testing '**WhitelistController**'. The test suite can be found in the '***WhiteboxTesting***' branch and is located at '***tests/WhitelistTest.php***'
 
 ```php
 <?php
