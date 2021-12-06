@@ -103,6 +103,16 @@ Best practice: Commit changes regularly
 
 # UAT
 
+## Use Case Diagram
+
+The team fulfilled what was being planned out during the documentation phase and hence, there was no adjustment made to the use case diagram.
+
+![User-Use-Case-Diagram](https://user-images.githubusercontent.com/10690912/144883366-08a94720-ef61-416a-8a12-74187213a899.jpg)
+
+![Administrator-Use-Case-Diagram](https://user-images.githubusercontent.com/10690912/144883489-c699e6e8-903a-404a-b48b-f2bf3db5b73b.jpg)
+
+![IRAcer-Use-Case-Diagram](https://user-images.githubusercontent.com/10690912/144883544-3ced1303-1b06-4c81-9e36-aa24353c57e5.jpg)
+
 ## Design Architecture Pattern Rework
 
 The team decided to rework the architecture of the web application from `layered architecture` to `Model-View-Controller` Architecture Pattern. This is due to the software application requiring flexible incorporation of human-computer interfaces. For example, using `MVC` allows us to have views for the web application where users of the application can use to call the different classes and processes that the model and controller class encapsulates. The views in this case are the `html` pages that does no business logic. There were also popular `MVC` guides and tutorials that allowed the team to apply Object-Oriented concepts and implement classes into our web application as compared to the proposed design in `Milestone 2`. After completing the web application and `Milestone 3`, the team concluded that choosing `MVC` was the right choice. 
