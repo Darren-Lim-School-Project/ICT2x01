@@ -8,7 +8,6 @@ class updateClass extends databaseCon
     {
         $conn = $this->connect();
         $stmt = $conn->query("UPDATE `user` SET `password` = '$hashedNew' WHERE `username` = '$username' AND `password` = '$hashedOld'");
-        $conn->exec($stmt);
         //Run a check
         $check = new loginController($username, $newPassword);
         if($check ->checkUser()== true){

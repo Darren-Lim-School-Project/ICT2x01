@@ -1,5 +1,5 @@
 <?php
-require_once "../mvc/model/databaseCon.php";
+require_once "databaseCon.php";
     class carToDBClass extends databaseCon {
         public function insertSpeed($speed) {
             $conn = $this->connect();
