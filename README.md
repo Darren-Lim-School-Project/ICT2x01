@@ -38,10 +38,7 @@ The CFGs for each function were created and the cyclomatic complexity were calcu
 
 ### Testing Paths:
 
-![InkedCFGWhitelistController](https://user-images.githubusercontent.com/28041652/144809629-ff3498b6-72f1-4209-88d6-2346200d1e32.jpg)
-
-
-
+![InkedCFGWhitelistController](https://user-images.githubusercontent.com/28041652/144818985-6256bccd-b239-4480-b09b-501bdfd76fcf.jpg)
 
 ## Test Cases:
 After calculating the Cyclomatic Complexity, the following tests were used in the test suite for testing '**WhitelistController**'. The test suite can be found in the '***WhiteboxTesting***' branch and is located at '***tests/WhitelistTest.php***'
@@ -134,6 +131,10 @@ class WhitelistTest extends \PHPUnit\Framework\TestCase {
 
 ```
 
+### In CFG form:
+
+![InkedCFGWhitelistController222](https://user-images.githubusercontent.com/28041652/144818771-56d0fad8-79a3-4c3e-9d33-639968990720.jpg)
+
 ## Test Case Execution:
 
  After numerous refractoring and testing to ensure that the functions behave as intended, the test cases were all succesful.
@@ -177,10 +178,10 @@ Follow the steps below on how to set-up **PHPUnit**, **Composer** and **XDebug**
 
 ## Running the Test Suite
 ### Installation and Run:
->Composer:
+`Composer:`
 1) Click on this [link](https://getcomposer.org/download/) and download **Composer-Setup.exe**.
 2. Run the downloaded executable and follow the steps to complete the installation.
->PHPUnit:
+`PHPUnit:`
 1. Once Composer is installed, open up your terminal/command prompt and run the following:
 ```javascript
 composer require phpunit/phpunit ^9
@@ -228,7 +229,7 @@ Example of a failed Unit Test:
 
 ## Code Coverage
 ### Installation and Run:
->Xdebug:
+`Xdebug:`
 
 1. After installing PHPUnit and Composer, Xdebug is required to run the code coverage command using PHPUnit. In the terminal/command prompt ***(Run command prompt or cd (change directory) of your command prompt to the same directory as your source codes)***, run the following:
 ```
