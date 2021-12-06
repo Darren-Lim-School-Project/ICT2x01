@@ -4,7 +4,7 @@ include 'sessionsec.process.php';
 if(isset($_POST["addcar"])) {
 
     // Grabbing the data
-    $carId = $_POST["carId"];
+    $carId = sanitize_input($_POST["carId"]);
 
     // Instantiate Class
     include "../mvc/controller/whitelistController.php";
@@ -27,4 +27,10 @@ if(isset($_POST["addcar"])) {
     }
 
 
+}
+function sanitize_input($data): string
+{
+    $data = trim($data);
+    $data = stripslashes($data);
+    return htmlspecialchars($data);
 }
