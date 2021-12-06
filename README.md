@@ -2,6 +2,46 @@
 ICT2x01-p4-9 Software Engineering Repository
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Development workflow
+
+The team utilised various Git/Github features throughout the course of this SE project. Each member has their own development branch for pushing updates to and when those updates are validated and tested, it will be merged with ```main```. The development branches run along side the ```main``` branch and provides the team the most updated development changes.
+
+## Setting up the project
+
+1. Clone the project
+	```https://github.com/hakimrazalee/ICT2x01-p4-9.git```
+2. From here onwards, developers have the option use use CLI git or the Github Desktop application for their development needs
+
+## Workflow
+
+1. Ensure that you have the latest codes from ```main```
+2. Create a new branch for development
+3. Code your features and ensure that it works by testing your code
+4. Push your code to Github
+5. Submit a merge request via the Github webpage
+6. Wait until the techleads has tested your feature and approves the merge
+
+## Commit rules
+
+1. Changes to the repository must be first done in the team members dev branch.
+	- Naming convention for said branch will be as followed ```<name>-dev```.
+2. Once changes are finalised on the users own branch, they will contact the group and the techleads for the team will run test before merging the commits to ```main```
+3. Pull request to merge should be done through GitHub’s UI
+
+Best practice: Commit changes regularly 
+
+## Adding features
+
+1. Any feature recommendations will be pinned onto the project board prior to group discussion during our meetings
+2. If your features rely on someone else's work, please open an issue and tag that user to keep everyone updated to avoid code conflict
+
+## Issue Management
+
+1. Issue titles need to follow the following naming convention ```<feauture>/<feature_name>``` 
+2. Issues must be tagged to <b><u>at least one</u></b> team member 
+4. Issues <b><u>MUST</u></b> be ```closed``` before it can be merged into main
+
 # Whitebox Testing
 
 The team used **WhitelistController** class for the Whitebox Testing Section of Milestone 3. The `WhitelistController` class is used to handle the interaction between the `WhitelistClass`, `DatabaseCon` Class, **Users** and **Administrators** using the Web Application. Its main purpose is to check if a car is whitelisted and handle the adding or removal of cars from the whitelist.
