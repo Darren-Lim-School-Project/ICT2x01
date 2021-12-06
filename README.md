@@ -91,7 +91,7 @@ The CFGs for each function were created and the cyclomatic complexity were calcu
 ![InkedCFGWhitelistController](https://user-images.githubusercontent.com/28041652/144818985-6256bccd-b239-4480-b09b-501bdfd76fcf.jpg)
 
 ## Test Cases:
-After calculating the Cyclomatic Complexity, the following tests were used in the test suite for testing `WhitelistController`. The test suite can be found in both `WhiteboxTesting` and `master` branch and is located at `tests/WhitelistTest.php` from the repo root directory.
+After calculating the Cyclomatic Complexity, the following tests were used in the test suite for testing `WhitelistController`. The test suite can be found in `master` branch and is located at `tests/WhitelistTest.php` from the repo root directory.
 
 ```php
 <?php
@@ -195,7 +195,7 @@ class WhitelistTest extends \PHPUnit\Framework\TestCase {
 
 ## Code Coverage Execution:
 
-The Code Coverage statistics displayed a coverage of 100% of all of the codes in the class when running the complete test suite. The coverage test results were generated using `PHPUnit`.  
+The Code Coverage statistics displayed a coverage of 100% of all of the codes in the class when running the complete test suite. The coverage test results were generated using `PHPUnit`.  The code coverage results can be found in `master` branch and is located at `coverageStats/whitelistController.php.html` from the repo root directory.
 
 ### How Code Coverage Was Executed [Demo]
 
