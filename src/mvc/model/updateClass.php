@@ -7,8 +7,8 @@ class updateClass extends databaseCon
     protected function updatePw($hashedNew, $username, $hashedOld, $newPassword)
     {
         $conn = $this->connect();
-        $stmt = $conn->query("UPDATE `user` SET `password` = '$hashedNew' WHERE `username` = '$username' AND `password` = '$hashedOld'");
-        $conn->exec($stmt);
+        $conn->query("UPDATE `user` SET `password` = '$hashedNew' WHERE `username` = '$username' AND `password` = '$hashedOld'");
+
         //Run a check
         $check = new loginController($username, $newPassword);
         if($check ->checkUser()== true){
