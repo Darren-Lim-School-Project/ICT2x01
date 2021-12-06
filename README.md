@@ -175,10 +175,14 @@ The team decided to use this framework as it is well known for its accuracy and 
 Follow the steps below on how to set-up **PHPUnit**, **Composer** and **XDebug** to run the Test Suite and Code Coverage. 
 
 ## Running the Test Suite
+
+**Ensure to clone our repository before doing the following:**
+
 ### Installation and Run:
 `Composer:`
 1) Click on this [link](https://getcomposer.org/download/) and download **Composer-Setup.exe**.
 2. Run the downloaded executable and follow the steps to complete the installation.
+
 `PHPUnit:`
 1. Once Composer is installed, open up your terminal/command prompt and run the following:
 ```javascript
