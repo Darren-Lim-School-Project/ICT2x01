@@ -67,7 +67,10 @@ include '../../../includes/sidebar.php';
 								class="text">Hard</span>
 							</a> <a href="./custom.php" class="btn btn-warning btn-icon-split"> <span
 								class="text">Custom</span>
-							</a>
+							</a> <a href="./rtcontrol.php" class="btn btn-secondary btn-icon-split"> <span
+                                        class="text">Real-time Control</span>
+                            </a>
+
 
 						</div>
 					</div>
