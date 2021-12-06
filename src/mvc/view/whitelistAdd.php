@@ -72,7 +72,7 @@ include '../../processors/sessionsec.process.php';
                                     <form action="../../processors/whitelistAdd.process.php" method="post" class="user">
                                         <div class="form-group">
                                             <input type="text" class="form-control form-control-user" id="carId" name="carId"
-                                                   required placeholder="Car Code to Add">
+                                                   pattern="(?=.*\d)(?=.*[a-zA-Z]).{8,}" title="Car Code should have at least 1 letter, 1 digit and min 8 characters!" required placeholder="Car Code to Add">
                                         </div>
                                         <?php
                                         if (isset($_GET['result'])){
