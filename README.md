@@ -79,7 +79,7 @@ Best practice: Commit changes regularly
 ## Updated Use Case Diagram & System State Diagram
 ### System State Diagram
 Generally, the SSD remains the same, with the transition from one state to the other being the same. Only the transtion from Car Connected Console to Leaderboards has changed, as highlighted below. The event[conditions]/actions has also been changed to match the functions used in the implementation.
-![Untitled Diagram-SSD drawio](https://user-images.githubusercontent.com/71870881/144863439-b46c5dee-ca37-4f41-be7a-c6dfdeee78d7.png)
+![SSD](https://user-images.githubusercontent.com/71870881/144864923-75015555-1e3b-46a3-b8f4-eccf33819c6e.png)
 
 
 ## Embedded Video
