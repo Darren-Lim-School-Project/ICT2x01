@@ -1,14 +1,15 @@
 # ICT2x01-p4-9
 ICT2x01-p4-9 Software Engineering Repository
 
-# Whitebox Testing.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Whitebox Testing
 
-The team used **WhitelistController** class for the Whitebox Testing Section of Milestone 3. The **WhitelistController** class is used to handle the interaction between the **WhitelistClass**, **DatabaseCon** Class, **Users** and **Administrators** using the Web Application. Its main purpose is to check if a car is whitelisted and handling the adding or removal of cars from the whitelist.
+The team used **WhitelistController** class for the Whitebox Testing Section of Milestone 3. The `WhitelistController` class is used to handle the interaction between the `WhitelistClass`, `DatabaseCon` Class, **Users** and **Administrators** using the Web Application. Its main purpose is to check if a car is whitelisted and handle the adding or removal of cars from the whitelist.
 
 
 
 ## WhitelistController Class:
-The **WhitelistController** class consists of **5** Functions and **1** Constructor.
+The `WhitelistController` class consists of **5** Functions and **1** Constructor.
 ```php
 #Functions of WhitelistController Class:
 
@@ -41,7 +42,7 @@ The CFGs for each function were created and the cyclomatic complexity were calcu
 ![InkedCFGWhitelistController](https://user-images.githubusercontent.com/28041652/144818985-6256bccd-b239-4480-b09b-501bdfd76fcf.jpg)
 
 ## Test Cases:
-After calculating the Cyclomatic Complexity, the following tests were used in the test suite for testing '**WhitelistController**'. The test suite can be found in the '***WhiteboxTesting***' branch and is located at '***tests/WhitelistTest.php***'
+After calculating the Cyclomatic Complexity, the following tests were used in the test suite for testing `WhitelistController`. The test suite can be found in both `WhiteboxTesting` and `master` branch and is located at `tests/WhitelistTest.php` from the repo root directory.
 
 ```php
 <?php
@@ -164,8 +165,6 @@ Hovering over the green-highlighted code lines will also show us which test case
 ![InkedCFGWhitelistController222](https://user-images.githubusercontent.com/28041652/144818771-56d0fad8-79a3-4c3e-9d33-639968990720.jpg)
 
 
-
-
 ## PHPUnit: Running Test Suite and Code Coverage
 
 The test suite and code coverage statistics were run and generated using an automated testing framework library for PHP called **PHPUnit**. **PHPUnit** requires **Composer**, a tool for dependency management in PHP, to be installed and uses **XDebug**, a php extension that provides debugging options,  to run an automated code coverage check. 
@@ -261,6 +260,8 @@ After running whitelistController.php.html:
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 
+# Personal Reflections
 
+The team's personal reflection can be found in the `reflections` folder from the root directory.
 
 
